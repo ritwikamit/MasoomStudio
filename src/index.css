@@ -97,8 +97,10 @@
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  animation: colDown 26s linear infinite;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .mosaic-col:hover {
@@ -109,11 +111,12 @@
 @media (min-width: 768px) {
   .mosaic-col {
     position: relative;
+    top: -260px;
   }
-  .mosaic-c1 { animation-duration: 26s; margin-top: -30px; }
-  .mosaic-c2 { animation-name: colUp; animation-duration: 30s; margin-top: -90px; }
-  .mosaic-c3 { animation-duration: 24s; margin-top: -15px; }
-  .mosaic-x1 { animation-name: colUp; animation-duration: 32s; margin-top: -70px; }
+  .mosaic-c1 { animation: colDown 32s linear infinite; }
+  .mosaic-c2 { animation: colUp 36s linear infinite; margin-top: -80px; }
+  .mosaic-c3 { animation: colDown 30s linear infinite; margin-top: -40px; }
+  .mosaic-x1 { animation: colUp 38s linear infinite; margin-top: -100px; }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -124,31 +127,31 @@
 @media (max-width: 767px) {
   .mosaic-col {
     position: relative !important;
+    top: -160px !important;
     flex-shrink: 0;
     width: var(--col) !important;
   }
   .mosaic-c1 {
-    animation: colDown 22s linear infinite !important;
+    animation: colDown 26s linear infinite !important;
   }
   .mosaic-c2 {
-    animation-name: colUp !important;
-    animation-duration: 26s !important;
-    margin-top: -30px !important;
+    animation: colUp 30s linear infinite !important;
+    margin-top: -40px !important;
   }
   .mosaic-c3 {
     display: flex !important;
-    animation: colDown 24s linear infinite !important;
-    margin-top: -15px !important;
+    animation: colDown 28s linear infinite !important;
+    margin-top: -20px !important;
   }
   .mosaic-x1 {
     display: none !important;
   }
 }
 
-/* Precise 50% loop keyframes guaranteeing zero jump or stutter */
+/* Precise 1-Set (33.333333%) loop keyframes: continuous, zero blank space, never breaks */
 @keyframes colDown {
   0% {
-    transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -33.333333%, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
@@ -160,7 +163,7 @@
     transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -33.333333%, 0);
   }
 }
 
