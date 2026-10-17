@@ -54,17 +54,19 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
   return (
     <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-24 px-3.5 sm:px-6 md:px-12 max-w-7xl mx-auto animate-in fade-in duration-300">
       {/* Top Back Navigation Bar - Positioned cleanly below floating header */}
-      <div className="flex items-center justify-between pb-5 mb-8 sm:mb-10 border-b border-[#0f0f0e]/10">
+      <div className="flex items-center justify-between gap-3 pb-4 sm:pb-5 mb-8 sm:mb-10 border-b border-[#0f0f0e]/10">
         <button
           onClick={onBackToHome}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-[#0f0f0e]/12 hover:border-[#b3884c] text-xs font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-all cursor-pointer shadow-xs hover:-translate-x-0.5 active:translate-x-0"
+          className="inline-flex items-center justify-center gap-2 w-9 h-9 sm:w-auto sm:h-auto sm:px-4 sm:py-2.5 rounded-full bg-white border border-[#0f0f0e]/12 hover:border-[#b3884c] text-xs font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-all cursor-pointer shadow-xs shrink-0 hover:-translate-x-0.5 active:scale-95"
+          aria-label="Back to Overview"
+          title="Back to Overview"
         >
-          <ArrowLeft className="w-4 h-4 text-[#b3884c]" />
-          <span>Back to Overview</span>
+          <ArrowLeft className="w-4 h-4 text-[#b3884c] shrink-0" />
+          <span className="hidden sm:inline">Back to Overview</span>
         </button>
 
-        <span className="font-['Pinyon_Script',cursive] text-2xl sm:text-3xl text-[#b3884c] truncate">
-          Masoom Studio Archives
+        <span className="font-['Pinyon_Script',cursive] text-xl sm:text-2xl md:text-3xl text-[#b3884c] text-right whitespace-nowrap min-w-0">
+          {currentPage === 'films' ? 'Masoom Video Archives' : 'Masoom Studio Archives'}
         </span>
       </div>
 
