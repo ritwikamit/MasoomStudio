@@ -1,6 +1,6 @@
 import React from 'react';
 import { STUDIO_INFO } from '../data/portfolioData';
-import { ArrowUp, Phone, Mail, Film, Image, Heart, MapPin, Calendar } from 'lucide-react';
+import { ArrowUp, Phone, Mail, Film, Image, Heart, MapPin, Calendar, Layers } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { StudioLogo } from './StudioLogo';
 
@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
               onClick={() => handleNav('services', 'services')}
               className="p-3 rounded-xl bg-[#faf8f5] active:bg-[#f2ece1] border border-[#0f0f0e]/8 flex items-center gap-2.5 transition-colors cursor-pointer text-left"
             >
-              <Calendar className="w-4 h-4 text-[#b3884c] shrink-0" />
+              <Layers className="w-4 h-4 text-[#b3884c] shrink-0" />
               <span className="text-xs font-semibold text-[#0f0f0e]">Bespoke Decks</span>
             </button>
 

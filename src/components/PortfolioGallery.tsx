@@ -36,7 +36,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectPhot
       </div>
 
       {/* FILTER BAR - SMOOTH HORIZONTAL SCROLL ON MOBILE */}
-      <div className="flex items-center overflow-x-auto gap-2 mb-8 sm:mb-10 pb-3 border-b border-[#0f0f0e]/8 select-none">
+      <div className="flex items-center overflow-x-auto gap-2 mb-8 sm:mb-10 pb-3 border-b border-[#0f0f0e]/8 select-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex items-center gap-1.5 text-xs text-[#757169] mr-2 font-medium shrink-0">
           <SlidersHorizontal className="w-3.5 h-3.5 text-[#b3884c]" />
           <span className="hidden sm:inline">Curate View:</span>

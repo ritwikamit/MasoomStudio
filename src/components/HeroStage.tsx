@@ -212,7 +212,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
         </div>
 
         {/* Clean minimal markers */}
-        <div className="mt-4 sm:mt-5 inline-flex items-center justify-center md:justify-start gap-3 sm:gap-5 px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-xs border border-white/90 shadow-2xs text-[10px] sm:text-xs text-[#45423d]">
+        <div className="mt-4 sm:mt-5 inline-flex items-center justify-center md:justify-start gap-2 sm:gap-4 px-2.5 sm:px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-xs border border-white/90 shadow-2xs text-[9.5px] sm:text-xs text-[#45423d] max-w-full">
           <div className="flex items-center gap-1">
             <Compass className="w-3.5 h-3.5 text-[#b3884c]" />
             <span>Patna, Bihar</span>
