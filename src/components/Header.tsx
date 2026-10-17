@@ -1,0 +1,357 @@
+import React, { useState } from 'react';
+import { STUDIO_INFO } from '../data/portfolioData';
+import { Phone, Search, Menu as MenuIcon, X, ArrowUpRight, Layers, Film, Camera, Heart, MapPin } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { StudioLogo } from './StudioLogo';
+
+interface HeaderProps {
+  onOpenEnquiry: () => void;
+  onOpenSearch?: () => void;
+  onNavigatePage?: (page: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onNavigatePage }) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const handleNav = (targetId: string, pageName?: string) => {
+    if (pageName && onNavigatePage) {
+      onNavigatePage(pageName);
+      setMobileMenuOpen(false);
+      return;
+    }
+    setMobileMenuOpen(false);
+    if (onNavigatePage) {
+      onNavigatePage('home');
+    }
+    setTimeout(() => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+  };
+
+  return (
+    <>
+      {/* FLOATING LUCID GLASS HEADER */}
+      <header
+        className="fixed top-0 left-2 right-2 sm:left-4 sm:right-4 md:left-8 md:right-8 z-40 bg-white/95 backdrop-blur-xl text-[#0f0f0e] rounded-b-[18px] sm:rounded-b-[20px] md:rounded-b-[24px] shadow-[0_10px_30px_-15px_rgba(15,15,14,0.12)] border-b border-x border-[#0f0f0e]/10 transition-all duration-300 flex flex-col"
+        role="banner"
+      >
+        {/* UTILITY STRIP - Clean Direct Contact & Aligned Icon-Reveal Nav */}
+        <div className="hidden md:flex h-9 border-b border-[#0f0f0e]/8 items-center px-6 text-[12px] text-[#0f0f0e]">
+          <div className="flex items-center gap-5">
+            {/* Direct Studio Call Link */}
+            <a
+              href={STUDIO_INFO.phonePrimaryUrl}
+              className="inline-flex items-center gap-1.5 hover:text-[#b3884c] transition-colors group"
+              title="Speak with our Studio Director"
+              aria-label="Call Patna Studio Director"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
+              <span className="font-medium tracking-tight">Studio Direct Call</span>
+            </a>
+
+            <div className="w-[1px] h-3.5 bg-[#0f0f0e]/15" aria-hidden="true" />
+
+            {/* Minimal WhatsApp Link */}
+            <a
+              href={STUDIO_INFO.whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-[#25D366] transition-colors"
+              title="Chat directly on WhatsApp"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" size={15} />
+              <span className="font-medium text-[11.5px]">WhatsApp Connect</span>
+            </a>
+          </div>
+
+          {/* ICON-FIRST LINKS: Perfectly Aligned Tooltip Text on Hover for PC View */}
+          <nav className="ml-auto flex items-center gap-2 text-[12px] font-medium text-[#45423d]" aria-label="Quick links">
+            {/* Programmes Icon Button */}
+            <button
+              onClick={() => handleNav('portfolio', 'gallery')}
+              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              title="Programmes"
+              aria-label="Programmes"
+            >
+              <Layers className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
+              {/* Highlighted text centered directly under icon on PC view */}
+              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
+                <span>Programmes</span>
+              </div>
+            </button>
+
+            <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+
+            {/* Films Icon Button */}
+            <button
+              onClick={() => handleNav('films', 'films')}
+              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              title="Films"
+              aria-label="Films"
+            >
+              <Film className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
+              {/* Highlighted text centered directly under icon on PC view */}
+              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
+                <span>Films</span>
+              </div>
+            </button>
+
+            <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+
+            {/* Photo-prints Icon Button */}
+            <button
+              onClick={() => handleNav('services', 'services')}
+              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              title="Photo-prints"
+              aria-label="Photo-prints"
+            >
+              <Camera className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
+              {/* Highlighted text centered directly under icon on PC view */}
+              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
+                <span>Photo-prints</span>
+              </div>
+            </button>
+
+            <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+
+            {/* Our Heart Icon Button */}
+            <button
+              onClick={() => handleNav('philosophy', 'philosophy')}
+              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              title="Our Heart"
+              aria-label="Our Heart"
+            >
+              <Heart className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
+              {/* Highlighted text centered directly under icon on PC view */}
+              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
+                <span>Our Heart</span>
+              </div>
+            </button>
+
+            <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+
+            {/* Visits Icon Button */}
+            <button
+              onClick={() => handleNav('location', 'location')}
+              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              title="Visits"
+              aria-label="Visits"
+            >
+              <MapPin className="w-3.5 h-3.5 text-[#b3884c] shrink-0 group-hover:scale-110 transition-transform" />
+              {/* Highlighted text centered directly under icon on PC view */}
+              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
+                <span>Visits</span>
+              </div>
+            </button>
+
+            {onOpenSearch && (
+              <>
+                <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+                <button
+                  onClick={onOpenSearch}
+                  className="w-7 h-7 bg-[#0f0f0e]/5 hover:bg-[#b3884c]/20 text-[#0f0f0e] rounded-md inline-flex items-center justify-center transition-colors ml-0.5 cursor-pointer"
+                  aria-label="Search archive"
+                  type="button"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                </button>
+              </>
+            )}
+          </nav>
+        </div>
+
+        {/* MAIN NAV ROW */}
+        <div className="h-14 sm:h-16 md:h-20 flex items-center justify-between px-2.5 sm:px-5 md:px-6">
+          {/* BRAND LINK & 100% VISIBLE LOGO */}
+          <button
+            onClick={() => handleNav('hero-stage', 'home')}
+            className="flex items-center gap-2 sm:gap-3.5 text-left group cursor-pointer min-w-0 pr-1"
+            aria-label="Masoom Studio Home"
+          >
+            <StudioLogo size={36} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 shadow-sm shrink-0 transition-transform duration-300 group-hover:scale-105" />
+
+            <div className="flex flex-col min-w-0">
+              <span className="font-['Cormorant_Garamond',serif] font-bold text-base sm:text-2xl md:text-[28px] leading-tight tracking-[-0.01em] uppercase text-[#0f0f0e] truncate block group-hover:text-[#b3884c] transition-colors">
+                MASOOM STUDIO
+              </span>
+              <span className="font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[7.5px] sm:text-[8px] md:text-[9px] tracking-[0.16em] uppercase text-[#757169] block mt-0.5 truncate">
+                <span className="sm:hidden">WEDDING ARCHIVE</span>
+                <span className="hidden sm:inline">AN ARCHIVE OF LIGHT & TIMELESS STORIES</span>
+              </span>
+            </div>
+          </button>
+
+          {/* MAIN NAVIGATION (Desktop) */}
+          <nav className="hidden lg:flex items-center gap-7" aria-label="Main navigation">
+            <button
+              onClick={() => handleNav('portfolio', 'gallery')}
+              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+            >
+              <span>Installations</span>
+              <span className="w-5.5 h-5.5 rounded-full bg-[#0f0f0e] text-white inline-flex items-center justify-center transition-transform hover:scale-105">
+                <ArrowUpRight className="w-3 h-3" />
+              </span>
+            </button>
+
+            <div className="w-[1px] h-4 bg-[#0f0f0e]/15" aria-hidden="true" />
+
+            <button
+              onClick={() => handleNav('philosophy', 'philosophy')}
+              className="text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+            >
+              Interviews & Craft
+            </button>
+            <button
+              onClick={() => handleNav('portfolio', 'gallery')}
+              className="text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+            >
+              Photographs
+            </button>
+
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+              type="button"
+            >
+              <MenuIcon className="w-4 h-4" />
+              <span>Menu</span>
+            </button>
+          </nav>
+
+          {/* CTA GROUP - Just the Check Date button, NO ICON, Clean & Perfectly Aligned */}
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={onOpenEnquiry}
+              className="h-8 sm:h-10 md:h-11 px-3.5 sm:px-5 md:px-6 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-full font-bold text-xs sm:text-xs md:text-[14px] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-xs whitespace-nowrap"
+            >
+              Check Date
+            </button>
+
+            {/* Mobile Menu Toggle Button */}
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="lg:hidden p-1.5 sm:p-2 text-[#0f0f0e] hover:text-[#b3884c] focus:outline-none shrink-0 cursor-pointer rounded-lg hover:bg-black/5"
+              aria-label="Open mobile menu"
+            >
+              <MenuIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* FULLSCREEN MOBILE / TABLET MENU DRAWER */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-[#faf8f5]/98 backdrop-blur-2xl text-[#0f0f0e] flex flex-col p-5 sm:p-6 overflow-y-auto animate-in fade-in duration-200"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div className="flex items-center justify-between pb-4 border-b border-[#0f0f0e]/10">
+            <div className="flex items-center gap-2.5 min-w-0">
+              <StudioLogo size={36} className="shadow-xs shrink-0" />
+              <div className="min-w-0">
+                <span className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold tracking-tight block truncate">
+                  MASOOM STUDIO
+                </span>
+                <span className="font-['Pinyon_Script',cursive] text-base sm:text-lg text-[#b3884c] block -mt-1 truncate">
+                  an archive of light & timeless stories
+                </span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="p-1.5 text-[#0f0f0e] hover:text-[#b3884c] rounded-lg transition-colors cursor-pointer shrink-0"
+              aria-label="Close menu"
+            >
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            </button>
+          </div>
+
+          <div className="my-8 flex flex-col gap-5 sm:gap-6">
+            <button
+              onClick={() => handleNav('portfolio', 'gallery')}
+              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+            >
+              <span>01. The Photographic Archive</span>
+              <Layers className="w-4 h-4 text-[#b3884c]" />
+            </button>
+            <button
+              onClick={() => handleNav('films', 'films')}
+              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+            >
+              <span>02. Wedding Cinema Films</span>
+              <Film className="w-4 h-4 text-[#b3884c]" />
+            </button>
+            <button
+              onClick={() => handleNav('philosophy', 'philosophy')}
+              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+            >
+              <span>03. Interviews & Philosophy</span>
+              <Heart className="w-4 h-4 text-[#b3884c]" />
+            </button>
+            <button
+              onClick={() => handleNav('services', 'services')}
+              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+            >
+              <span>04. Photo-Prints & Albums</span>
+              <Camera className="w-4 h-4 text-[#b3884c]" />
+            </button>
+            <button
+              onClick={() => handleNav('location', 'location')}
+              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+            >
+              <span>05. Visits & Consultations</span>
+              <MapPin className="w-4 h-4 text-[#b3884c]" />
+            </button>
+          </div>
+
+          <div className="mt-auto pt-6 border-t border-[#0f0f0e]/10 flex flex-col gap-4">
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenEnquiry();
+              }}
+              className="w-full py-3.5 bg-[#0f0f0e] text-white rounded-full font-bold text-center tracking-wide text-xs sm:text-sm cursor-pointer shadow-xs"
+            >
+              Check Date Availability
+            </button>
+
+            {/* Quick Direct Actions */}
+            <div className="grid grid-cols-2 gap-3 pt-1">
+              <a
+                href={STUDIO_INFO.phonePrimaryUrl}
+                className="py-3 px-3 rounded-xl bg-white border border-[#0f0f0e]/10 flex items-center justify-center gap-2 hover:border-[#b3884c] transition-colors"
+              >
+                <Phone className="w-4 h-4 text-[#b3884c]" />
+                <span className="text-xs font-semibold text-[#0f0f0e]">Call Studio</span>
+              </a>
+
+              <a
+                href={STUDIO_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="py-3 px-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 flex items-center justify-center gap-2 hover:bg-[#25D366]/20 transition-colors"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366]" size={16} />
+                <span className="text-xs font-bold text-[#128C7E]">WhatsApp</span>
+              </a>
+            </div>
+
+            <p className="text-[11px] text-[#757169] text-center mt-1">
+              Bailey Road, near Paras Hospital, Patna 800014
+            </p>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};

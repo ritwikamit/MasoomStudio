@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-script: "Pinyon Script", cursive;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+    /* Masoom Studio Light Luxury Palette */
+    --paper: #f6f4ee;
+    --paper-card: #ffffff;
+    --paper-surface: #faf7f2;
+    --ink: #0f0f0e;
+    --ink-subtle: #45423d;
+    --ink-muted: #757169;
+    --gold: #b3884c;
+    --gold-light: #f4ecdc;
+    --gold-rich: #9c7237;
+    --border-light: rgba(15, 15, 14, 0.08);
+    --border-gold: rgba(179, 136, 76, 0.25);
+
+    /* Grid Stage Tokens (Desktop Default) */
+    --col: 215px;
+    --gap: 14px;
+    --pitch: 295px;
+    --r: 22px;
+  }
+
+  /* Tablet sizing (All 3 Rows Visible & Moving Seamlessly) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    :root {
+      --col: 118px;
+      --gap: 8px;
+      --pitch: 175px;
+      --r: 14px;
+    }
+  }
+
+  /* Smartphone sizing for all 3 columns (Centered & Seamless) */
+  @media (max-width: 767px) {
+    :root {
+      --col: 104px;
+      --gap: 8px;
+      --pitch: 155px;
+      --r: 14px;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    background-color: var(--paper);
+    color: var(--ink);
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 140px;
+    }
+  }
+
+  body {
+    overflow-x: hidden;
+    font-family: var(--font-sans);
+    background-color: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f0ece3;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4ccbd;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   HERO MOSAIC GRID MARQUEE ANIMATIONS (100% Seamless Loop for Every View)
+   ════════════════════════════════════════════════════════════════════════ */
+
+.mosaic-col {
+  width: var(--col);
+  display: flex;
+  flex-direction: column;
+  animation: colDown 26s linear infinite;
+  will-change: transform;
+}
+
+.mosaic-col:hover {
+  animation-play-state: paused;
+}
+
+/* Desktop: Absolute Right-Side Oriented with Zero-Gap Overhang */
+@media (min-width: 1025px) {
+  .mosaic-col {
+    position: absolute;
+    top: 0;
+  }
+  .mosaic-c1 { left: 0; top: -60px; animation-duration: 26s; }
+  .mosaic-c2 { left: calc(var(--col) + var(--gap)); top: -140px; animation-name: colUp; animation-duration: 30s; }
+  .mosaic-c3 { left: calc(2 * (var(--col) + var(--gap))); top: -40px; animation-duration: 24s; }
+  .mosaic-x1 { left: calc(-1 * (var(--col) + var(--gap))); top: -110px; animation-name: colUp; animation-duration: 32s; }
+}
+
+/* Tablet: All 3 Rows Visible & Seamlessly Moving with Zero-Gap Overhang */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mosaic-col {
+    position: absolute;
+    top: 0;
+  }
+  .mosaic-c1 { left: 0; top: -50px; animation-duration: 24s; }
+  .mosaic-c2 { left: calc(var(--col) + var(--gap)); top: -120px; animation-name: colUp; animation-duration: 28s; }
+  .mosaic-c3 { left: calc(2 * (var(--col) + var(--gap))); top: -30px; animation-duration: 22s; }
+  .mosaic-x1 { display: none !important; }
+}
+
+/* Smartphone: All Three Rows Centered & Moving Seamlessly */
+@media (max-width: 767px) {
+  .mosaic-col {
+    position: relative !important;
+    left: auto !important;
+    flex-shrink: 0;
+    width: var(--col) !important;
+  }
+  .mosaic-c1 {
+    top: 0 !important;
+    animation: colDown 22s linear infinite !important;
+  }
+  .mosaic-c2 {
+    top: -30px !important;
+    animation-name: colUp !important;
+    animation-duration: 26s !important;
+  }
+  .mosaic-c3 {
+    display: flex !important;
+    top: -15px !important;
+    animation: colDown 24s linear infinite !important;
+  }
+  .mosaic-x1 {
+    display: none !important;
+  }
+}
+
+/* Precise 50% loop keyframes guaranteeing zero jump or stutter */
+@keyframes colDown {
+  0% {
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes colUp {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mosaic-col {
+    animation: none !important;
+  }
+}
+
+/* Organic Paper Texture */
+.paper-texture {
+  background-image: radial-gradient(rgba(179, 136, 76, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
