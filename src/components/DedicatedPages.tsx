@@ -52,18 +52,18 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] pt-24 sm:pt-28 pb-20 px-3 sm:px-6 md:px-12 max-w-7xl mx-auto animate-in fade-in duration-300">
-      {/* Top Back Navigation Bar */}
+    <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-24 px-3.5 sm:px-6 md:px-12 max-w-7xl mx-auto animate-in fade-in duration-300">
+      {/* Top Back Navigation Bar - Positioned cleanly below floating header */}
       <div className="flex items-center justify-between pb-5 mb-8 sm:mb-10 border-b border-[#0f0f0e]/10">
         <button
           onClick={onBackToHome}
-          className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full bg-white border border-[#0f0f0e]/10 hover:border-[#b3884c] text-xs font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer shadow-xs"
+          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-white border border-[#0f0f0e]/12 hover:border-[#b3884c] text-xs font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-all cursor-pointer shadow-xs hover:-translate-x-0.5 active:translate-x-0"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <ArrowLeft className="w-4 h-4 text-[#b3884c]" />
           <span>Back to Overview</span>
         </button>
 
-        <span className="font-['Pinyon_Script',cursive] text-xl sm:text-2xl text-[#b3884c] truncate">
+        <span className="font-['Pinyon_Script',cursive] text-2xl sm:text-3xl text-[#b3884c] truncate">
           Masoom Studio Archives
         </span>
       </div>
@@ -344,6 +344,18 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                   Tuesday to Sunday : 11:00 AM – 8:00 PM (Prior Appointment)
                 </p>
               </div>
+            </div>
+
+            {/* Live Interactive Google Map */}
+            <div className="rounded-2xl overflow-hidden border border-[#0f0f0e]/12 shadow-sm bg-[#ece7df]">
+              <iframe
+                title="Masoom Studio Location Map"
+                src="https://maps.google.com/maps?q=Masoom+Studio,+Bailey+Road,+near+Paras+Hospital,+Patna&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-72 sm:h-96 border-0 filter contrast-[1.02] saturate-[1.05]"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
