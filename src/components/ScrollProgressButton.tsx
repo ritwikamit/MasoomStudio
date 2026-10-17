@@ -32,7 +32,7 @@ export const ScrollProgressButton: React.FC = () => {
     <button
       onClick={scrollToTop}
       aria-label="Scroll back to top"
-      className={`fixed bottom-6 right-6 z-40 w-13 h-13 rounded-full flex items-center justify-center backdrop-blur-md bg-white/80 border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-[#0f0f0e] hover:text-[#b3884c] transition-all duration-300 cursor-pointer group hover:scale-105 active:scale-95 ${
+      className={`fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-30 w-12 h-12 sm:w-13 sm:h-13 rounded-full flex items-center justify-center backdrop-blur-md bg-white/85 border border-white/70 shadow-[0_8px_30px_rgb(0,0,0,0.14)] text-[#0f0f0e] hover:text-[#b3884c] transition-all duration-300 cursor-pointer group hover:scale-105 active:scale-95 ${
         isVisible ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-4 pointer-events-none'
       }`}
     >

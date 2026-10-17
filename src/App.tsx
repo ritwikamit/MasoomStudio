@@ -15,6 +15,7 @@ import { PrivacyModal } from './components/PrivacyModal';
 import { ScrollProgressButton } from './components/ScrollProgressButton';
 import { CookieBanner } from './components/CookieBanner';
 import { DedicatedPages } from './components/DedicatedPages';
+import { MobileBottomNav } from './components/MobileBottomNav';
 
 export type PageView = 'home' | 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates' | 'cookies-policy' | 'terms-conditions';
 
@@ -61,7 +62,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] flex flex-col relative selection:bg-[#b3884c]/25 selection:text-[#0f0f0e]">
+    <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] flex flex-col relative selection:bg-[#b3884c]/25 selection:text-[#0f0f0e] pb-16 md:pb-0">
       {/* 1. FLOATING SLEEK HEADER */}
       <Header
         onOpenEnquiry={() => handleOpenEnquiry()}
@@ -140,6 +141,13 @@ export default function App() {
 
       {/* 6. DYNAMIC FILLING BORDER SCROLL-UP BUTTON */}
       <ScrollProgressButton />
+
+      {/* 7. CONSTANTLY VISIBLE MOBILE BOTTOM DOCK WITH ICONS */}
+      <MobileBottomNav
+        currentPage={currentPage}
+        onNavigatePage={handleNavigatePage}
+        onOpenEnquiry={() => handleOpenEnquiry()}
+      />
     </div>
   );
 }
