@@ -67,21 +67,19 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             </a>
           </div>
 
-          {/* ICON-FIRST LINKS: Perfectly Aligned Tooltip Text on Hover for PC View */}
-          <nav className="ml-auto flex items-center gap-2 text-[12px] font-medium text-[#45423d]" aria-label="Quick links">
+          {/* ICON-FIRST LINKS: Smooth Attached Text Reveal on Hover */}
+          <nav className="ml-auto flex items-center gap-1.5 text-[12px] font-medium text-[#45423d]" aria-label="Quick links">
             {/* Programmes Icon Button */}
             <button
               onClick={() => handleNav('portfolio', 'gallery')}
-              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
               title="Programmes"
               aria-label="Programmes"
             >
-              <Layers className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
-              {/* Highlighted text centered directly under icon on PC view */}
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
-                <span>Programmes</span>
-              </div>
+              <Layers className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[95px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Programmes
+              </span>
             </button>
 
             <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
@@ -89,16 +87,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Films Icon Button */}
             <button
               onClick={() => handleNav('films', 'films')}
-              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
               title="Films"
               aria-label="Films"
             >
-              <Film className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
-              {/* Highlighted text centered directly under icon on PC view */}
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
-                <span>Films</span>
-              </div>
+              <Film className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[70px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Films
+              </span>
             </button>
 
             <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
@@ -106,16 +102,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Photo-prints Icon Button */}
             <button
               onClick={() => handleNav('services', 'services')}
-              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
               title="Photo-prints"
               aria-label="Photo-prints"
             >
-              <Camera className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
-              {/* Highlighted text centered directly under icon on PC view */}
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
-                <span>Photo-prints</span>
-              </div>
+              <Camera className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[95px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Photo-prints
+              </span>
             </button>
 
             <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
@@ -123,16 +117,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Our Heart Icon Button */}
             <button
               onClick={() => handleNav('philosophy', 'philosophy')}
-              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
               title="Our Heart"
               aria-label="Our Heart"
             >
-              <Heart className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
-              {/* Highlighted text centered directly under icon on PC view */}
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
-                <span>Our Heart</span>
-              </div>
+              <Heart className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[85px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Our Heart
+              </span>
             </button>
 
             <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
@@ -140,16 +132,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Visits Icon Button */}
             <button
               onClick={() => handleNav('location', 'location')}
-              className="group relative flex items-center justify-center w-7 h-7 rounded-full hover:bg-[#b3884c]/10 text-[#45423d] hover:text-[#b3884c] transition-colors cursor-pointer"
+              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
               title="Visits"
               aria-label="Visits"
             >
-              <MapPin className="w-3.5 h-3.5 text-[#b3884c] shrink-0 group-hover:scale-110 transition-transform" />
-              {/* Highlighted text centered directly under icon on PC view */}
-              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 bg-[#0f0f0e] text-[#f6f4ee] text-[11px] font-semibold px-2.5 py-1 rounded-md shadow-lg whitespace-nowrap z-50 flex items-center gap-1.5 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#b3884c]" />
-                <span>Visits</span>
-              </div>
+              <MapPin className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[65px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Visits
+              </span>
             </button>
 
             {onOpenSearch && (
@@ -157,11 +147,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
                 <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
                 <button
                   onClick={onOpenSearch}
-                  className="w-7 h-7 bg-[#0f0f0e]/5 hover:bg-[#b3884c]/20 text-[#0f0f0e] rounded-md inline-flex items-center justify-center transition-colors ml-0.5 cursor-pointer"
+                  className="group flex items-center gap-1.5 h-7 px-2 rounded-full bg-[#0f0f0e]/5 hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 ml-0.5 cursor-pointer overflow-hidden"
                   aria-label="Search archive"
                   type="button"
+                  title="Search archive"
                 >
-                  <Search className="w-3.5 h-3.5" />
+                  <Search className="w-3.5 h-3.5 text-[#0f0f0e] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+                  <span className="max-w-0 opacity-0 group-hover:max-w-[70px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                    Search
+                  </span>
                 </button>
               </>
             )}
@@ -346,7 +340,24 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
               </a>
             </div>
 
-            <p className="text-[11px] text-[#757169] text-center mt-1">
+            {/* Quick Policies Links */}
+            <div className="flex items-center justify-center gap-4 text-xs text-[#757169] pt-1">
+              <button
+                onClick={() => handleNav('cookies-policy', 'cookies-policy')}
+                className="hover:text-[#b3884c] transition-colors cursor-pointer"
+              >
+                Cookies Policy
+              </button>
+              <span className="text-[#0f0f0e]/20">·</span>
+              <button
+                onClick={() => handleNav('terms-conditions', 'terms-conditions')}
+                className="hover:text-[#b3884c] transition-colors cursor-pointer"
+              >
+                Terms & Conditions
+              </button>
+            </div>
+
+            <p className="text-[11px] text-[#757169] text-center mt-0.5">
               Bailey Road, near Paras Hospital, Patna 800014
             </p>
           </div>

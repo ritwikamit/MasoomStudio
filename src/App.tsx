@@ -16,7 +16,7 @@ import { ScrollProgressButton } from './components/ScrollProgressButton';
 import { CookieBanner } from './components/CookieBanner';
 import { DedicatedPages } from './components/DedicatedPages';
 
-export type PageView = 'home' | 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates';
+export type PageView = 'home' | 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates' | 'cookies-policy' | 'terms-conditions';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageView>('home');

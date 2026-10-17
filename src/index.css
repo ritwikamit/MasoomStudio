@@ -21,19 +21,21 @@
     --border-gold: rgba(179, 136, 76, 0.25);
 
     /* Grid Stage Tokens (Desktop Default) */
-    --col: 215px;
+    --col: 210px;
     --gap: 14px;
-    --pitch: 295px;
-    --r: 22px;
+    --pitch: 285px;
+    --r: 20px;
+    --mosaic-mask: linear-gradient(to right, transparent 0%, black 12%, black 100%);
   }
 
-  /* Tablet sizing (All 3 Rows Visible & Moving Seamlessly) */
+  /* Tablet sizing */
   @media (min-width: 768px) and (max-width: 1024px) {
     :root {
-      --col: 118px;
-      --gap: 8px;
-      --pitch: 175px;
+      --col: 130px;
+      --gap: 10px;
+      --pitch: 185px;
       --r: 14px;
+      --mosaic-mask: linear-gradient(to right, transparent 0%, black 15%, black 100%);
     }
   }
 
@@ -43,7 +45,8 @@
       --col: 104px;
       --gap: 8px;
       --pitch: 155px;
-      --r: 14px;
+      --r: 12px;
+      --mosaic-mask: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
     }
   }
 
@@ -93,6 +96,7 @@
   width: var(--col);
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   animation: colDown 26s linear infinite;
   will-change: transform;
 }
@@ -101,27 +105,18 @@
   animation-play-state: paused;
 }
 
-/* Desktop: Absolute Right-Side Oriented with Zero-Gap Overhang */
-@media (min-width: 1025px) {
+/* Desktop & Tablet: Flex row anchored strictly against right boundary */
+@media (min-width: 768px) {
   .mosaic-col {
-    position: absolute;
-    top: 0;
+    position: relative;
   }
-  .mosaic-c1 { left: 0; top: -60px; animation-duration: 26s; }
-  .mosaic-c2 { left: calc(var(--col) + var(--gap)); top: -140px; animation-name: colUp; animation-duration: 30s; }
-  .mosaic-c3 { left: calc(2 * (var(--col) + var(--gap))); top: -40px; animation-duration: 24s; }
-  .mosaic-x1 { left: calc(-1 * (var(--col) + var(--gap))); top: -110px; animation-name: colUp; animation-duration: 32s; }
+  .mosaic-c1 { animation-duration: 26s; margin-top: -30px; }
+  .mosaic-c2 { animation-name: colUp; animation-duration: 30s; margin-top: -90px; }
+  .mosaic-c3 { animation-duration: 24s; margin-top: -15px; }
+  .mosaic-x1 { animation-name: colUp; animation-duration: 32s; margin-top: -70px; }
 }
 
-/* Tablet: All 3 Rows Visible & Seamlessly Moving with Zero-Gap Overhang */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .mosaic-col {
-    position: absolute;
-    top: 0;
-  }
-  .mosaic-c1 { left: 0; top: -50px; animation-duration: 24s; }
-  .mosaic-c2 { left: calc(var(--col) + var(--gap)); top: -120px; animation-name: colUp; animation-duration: 28s; }
-  .mosaic-c3 { left: calc(2 * (var(--col) + var(--gap))); top: -30px; animation-duration: 22s; }
   .mosaic-x1 { display: none !important; }
 }
 
@@ -129,23 +124,21 @@
 @media (max-width: 767px) {
   .mosaic-col {
     position: relative !important;
-    left: auto !important;
     flex-shrink: 0;
     width: var(--col) !important;
   }
   .mosaic-c1 {
-    top: 0 !important;
     animation: colDown 22s linear infinite !important;
   }
   .mosaic-c2 {
-    top: -30px !important;
     animation-name: colUp !important;
     animation-duration: 26s !important;
+    margin-top: -30px !important;
   }
   .mosaic-c3 {
     display: flex !important;
-    top: -15px !important;
     animation: colDown 24s linear infinite !important;
+    margin-top: -15px !important;
   }
   .mosaic-x1 {
     display: none !important;

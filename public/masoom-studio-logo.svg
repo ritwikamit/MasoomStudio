@@ -22,8 +22,7 @@
     <path id="bottomTextArc" d="M 405,250 A 155,155 0 0,1 95,250" fill="none"/>
   </defs>
 
-  <!-- Deep ink background -->
-  <rect width="500" height="500" fill="#050505" rx="20"/>
+  <!-- Transparent background -->
 
   <!-- Subtle ambient golden aura -->
   <circle cx="250" cy="250" r="190" fill="url(#goldGlow)"/>

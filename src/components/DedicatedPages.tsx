@@ -4,7 +4,7 @@ import { ArrowLeft, Play, MapPin, Camera, Clock, Check, ArrowRight, Heart, Check
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface DedicatedPagesProps {
-  currentPage: 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates';
+  currentPage: 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates' | 'cookies-policy' | 'terms-conditions';
   onBackToHome: () => void;
   onSelectPhoto: (item: PortfolioItem) => void;
   onOpenEnquiry: (serviceName?: string) => void;
@@ -565,6 +565,169 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                 </div>
               </form>
             )}
+          </div>
+        </div>
+      )}
+
+      {/* 7. DEDICATED COOKIES POLICY PAGE */}
+      {currentPage === 'cookies-policy' && (
+        <div className="max-w-4xl mx-auto py-6">
+          <div className="mb-8 sm:mb-12">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b3884c] block mb-2">
+              Privacy & Safeguards
+            </span>
+            <h1 className="font-['Cormorant_Garamond',serif] text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-[#0f0f0e]">
+              Cookies & Storage Policy
+            </h1>
+            <p className="mt-2 text-sm sm:text-base text-[#524e47] leading-relaxed">
+              Last updated: October 2026 · Transparent guidelines on how Masoom Studio respects your browser session.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#0f0f0e]/10 shadow-sm space-y-8 text-sm text-[#45423d] leading-relaxed">
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                1. Our Commitment to Zero Invasive Tracking
+              </h2>
+              <p>
+                At Masoom Studio, our focus is capturing heirloom wedding stories, not tracking your personal browsing behavior. We do not sell your data, we do not employ third-party ad networks, and we never track you across other websites.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                2. Types of Cookies We Use
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+                <div className="p-4 rounded-xl bg-[#faf8f5] border border-[#0f0f0e]/8">
+                  <h3 className="font-bold text-[#0f0f0e] text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#b3884c]" />
+                    Essential Session Cookies
+                  </h3>
+                  <p className="text-xs text-[#524e47]">
+                    Necessary for navigating our portfolio, maintaining your celebration date enquiry state, and rendering smooth interactions.
+                  </p>
+                </div>
+                <div className="p-4 rounded-xl bg-[#faf8f5] border border-[#0f0f0e]/8">
+                  <h3 className="font-bold text-[#0f0f0e] text-xs uppercase tracking-wider mb-1.5 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#b3884c]" />
+                    Consent & Preference Storage
+                  </h3>
+                  <p className="text-xs text-[#524e47]">
+                    Stores your cookie preferences (e.g., whether you dismissed the privacy banner) locally in your browser.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                3. Local Storage Usage
+              </h2>
+              <p>
+                To provide a fast and uninterrupted experience, our site uses standard browser LocalStorage solely to remember interface preferences and prevent repeated popups. No sensitive financial information or personal images are ever stored in your local browser cache.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                4. Managing & Clearing Cookies
+              </h2>
+              <p>
+                You can easily manage, disable, or delete cookies at any time through your browser settings (Chrome, Safari, Firefox, or Edge). Please note that clearing cookies may reset your dismissed notice preferences.
+              </p>
+            </section>
+
+            <section className="pt-4 border-t border-[#0f0f0e]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-[#757169]">
+                Have questions regarding your privacy? Contact our Studio Director directly.
+              </span>
+              <button
+                onClick={() => onOpenEnquiry('Privacy Enquiry')}
+                className="px-5 py-2.5 rounded-full bg-[#0f0f0e] text-white text-xs font-bold hover:bg-[#b3884c] transition-colors cursor-pointer"
+              >
+                Contact Studio
+              </button>
+            </section>
+          </div>
+        </div>
+      )}
+
+      {/* 8. DEDICATED TERMS AND CONDITIONS PAGE */}
+      {currentPage === 'terms-conditions' && (
+        <div className="max-w-4xl mx-auto py-6">
+          <div className="mb-8 sm:mb-12">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b3884c] block mb-2">
+              Studio Agreement & Standards
+            </span>
+            <h1 className="font-['Cormorant_Garamond',serif] text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-[#0f0f0e]">
+              Terms & Conditions
+            </h1>
+            <p className="mt-2 text-sm sm:text-base text-[#524e47] leading-relaxed">
+              Official wedding coverage terms, delivery schedules, and client rights for Masoom Studio.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-6 sm:p-10 border border-[#0f0f0e]/10 shadow-sm space-y-8 text-sm text-[#45423d] leading-relaxed">
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                1. Date Exclusivity & Retainer Booking
+              </h2>
+              <p>
+                To ensure complete artistic dedication, Masoom Studio accepts only one premier celebration per date per lead team. A booking is formally locked upon signing the bespoke commission agreement and receipt of the agreed booking advance. Inquiries without an advance do not hold wedding dates.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                2. Candid Documentary Style & Discretion
+              </h2>
+              <p>
+                Our philosophy prioritizes organic, heartfelt documentary moments over rigid poses. Clients trust our artistic judgment in lighting, candid capture, curation, and timeless Indian color-grading.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                3. Deliverables & Archival Timelines
+              </h2>
+              <ul className="space-y-2 mt-2 list-disc list-inside text-[#524e47]">
+                <li><strong className="text-[#0f0f0e]">Sneak Peek Selection:</strong> Delivered within 5–7 days following the celebration.</li>
+                <li><strong className="text-[#0f0f0e]">Full Curated High-Res Gallery:</strong> Delivered via secure cloud archive within 4–6 weeks.</li>
+                <li><strong className="text-[#0f0f0e]">Cinematic Film Master:</strong> 4K color-graded films delivered within 6–8 weeks.</li>
+                <li><strong className="text-[#0f0f0e]">Heirloom Print Albums:</strong> Handcrafted and shipped following client proof approval.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                4. Copyright, Licensing & Client Usage
+              </h2>
+              <p>
+                Clients receive full, perpetual personal printing and digital sharing rights for family, friends, and social media. Masoom Studio retains artistic copyright and the right to display selected frames in our studio monograph, official portfolio, and artistic retrospectives unless a private non-disclosure agreement is agreed upon prior to commissioning.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold text-[#0f0f0e] mb-3">
+                5. Rescheduling & Unforeseen Events
+              </h2>
+              <p>
+                In the rare event of date postponement due to genuine emergencies or force majeure, we make every reasonable endeavor to transfer the commission to an available future date without forfeiture of booking advance.
+              </p>
+            </section>
+
+            <section className="pt-4 border-t border-[#0f0f0e]/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-[#757169]">
+                Questions regarding our commission contract? We are always happy to clarify.
+              </span>
+              <button
+                onClick={() => onOpenEnquiry('Commission Terms Enquiry')}
+                className="px-5 py-2.5 rounded-full bg-[#0f0f0e] text-white text-xs font-bold hover:bg-[#b3884c] transition-colors cursor-pointer"
+              >
+                Discuss Terms
+              </button>
+            </section>
           </div>
         </div>
       )}

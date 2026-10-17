@@ -77,7 +77,11 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
           - Height exceeds any display (iPhone, iPad, 4K) to prevent empty gaps
           ══════════════════════════════════════════════════════════════════ */}
       <div
-        className="absolute inset-0 flex justify-center items-center gap-[var(--gap)] overflow-hidden pointer-events-none select-none z-10 opacity-100 md:pointer-events-auto md:inset-auto md:top-0 md:bottom-0 md:right-2 md:lg:right-8 md:xl:right-14 md:w-[390px] md:lg:w-[630px] md:xl:w-[840px] md:h-full"
+        className="absolute inset-0 flex justify-center items-center gap-[var(--gap)] overflow-hidden pointer-events-none select-none z-10 opacity-30 sm:opacity-35 md:opacity-100 md:pointer-events-auto md:inset-auto md:top-0 md:bottom-0 md:right-0 md:h-full md:w-[48%] lg:w-[50%] xl:w-[54%] md:justify-end md:pr-4 lg:pr-8 xl:pr-12"
+        style={{
+          maskImage: 'var(--mosaic-mask)',
+          WebkitMaskImage: 'var(--mosaic-mask)',
+        }}
         aria-hidden="true"
         title="Interactive Mosaic: Hover to pause, click to inspect photo"
       >
@@ -171,7 +175,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
           - 100% Guaranteed Clearance Below Fixed Header on all screens
           - In-flow flex positioning prevents header overlap at any resolution
           ══════════════════════════════════════════════════════════════════ */}
-      <div className="relative z-20 w-full max-w-sm sm:max-w-md mx-auto text-center px-2 sm:px-4 py-2 flex flex-col items-center justify-center bg-transparent border-none shadow-none md:p-0 md:text-left md:items-start md:mx-0 md:max-w-sm md:lg:max-w-lg lg:max-w-xl xl:max-w-2xl my-auto">
+      <div className="relative z-20 w-full max-w-sm sm:max-w-md mx-auto text-center px-4 py-5 sm:px-6 sm:py-6 flex flex-col items-center justify-center bg-white/80 backdrop-blur-md rounded-2xl border border-white/80 shadow-[0_10px_35px_-10px_rgba(15,15,14,0.1)] md:bg-transparent md:backdrop-blur-none md:border-none md:shadow-none md:p-0 md:text-left md:items-start md:mx-0 md:max-w-sm md:lg:max-w-lg lg:max-w-xl xl:max-w-2xl my-auto">
         {/* Minimal kicker pill with aperture icon - readable over moving photos */}
         <div className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full bg-white/90 backdrop-blur-xs border border-white/90 shadow-2xs text-[10px] sm:text-xs font-semibold tracking-[0.16em] uppercase text-[#8a652c] mb-2 sm:mb-3">
           <Aperture className="w-3.5 h-3.5 text-[#b3884c]" />
