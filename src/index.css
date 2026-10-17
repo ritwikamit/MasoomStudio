@@ -39,14 +39,14 @@
     }
   }
 
-  /* Smartphone sizing for all 3 columns (Centered & Seamless) */
+  /* Smartphone sizing for all 3 columns (Clear, Crisp & Seamless) */
   @media (max-width: 767px) {
     :root {
-      --col: 104px;
+      --col: 110px;
       --gap: 8px;
-      --pitch: 155px;
-      --r: 12px;
-      --mosaic-mask: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+      --pitch: 160px;
+      --r: 14px;
+      --mosaic-mask: linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%);
     }
   }
 

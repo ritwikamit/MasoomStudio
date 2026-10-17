@@ -90,7 +90,7 @@ export const PhilosophySection: React.FC = () => {
 
       {/* Founder Quote Card - Light Luxury with Guaranteed Visible StudioLogo */}
       <div className="mt-12 sm:mt-16 bg-white border border-[#b3884c]/30 rounded-2xl p-6 sm:p-10 md:p-12 relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 shadow-sm">
-        <StudioLogo size={72} className="shadow-xs shrink-0" />
+        <StudioLogo size={80} className="shrink-0" />
 
         <div className="flex-1 text-center sm:text-left">
           <p className="font-['Cormorant_Garamond',serif] text-lg sm:text-2xl md:text-3xl italic text-[#141210] leading-snug">

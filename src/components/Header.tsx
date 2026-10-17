@@ -170,7 +170,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             className="flex items-center gap-2 sm:gap-3.5 text-left group cursor-pointer min-w-0 pr-1"
             aria-label="Masoom Studio Home"
           >
-            <StudioLogo size={36} className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 shadow-sm shrink-0 transition-transform duration-300 group-hover:scale-105" />
+            <StudioLogo size={42} className="h-9 sm:h-11 md:h-12 w-auto shrink-0 transition-transform duration-300 group-hover:scale-105" />
 
             <div className="flex flex-col min-w-0">
               <span className="font-['Cormorant_Garamond',serif] font-bold text-base sm:text-2xl md:text-[28px] leading-tight tracking-[-0.01em] uppercase text-[#0f0f0e] truncate block group-hover:text-[#b3884c] transition-colors">
@@ -250,7 +250,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
         >
           <div className="flex items-center justify-between pb-4 border-b border-[#0f0f0e]/10">
             <div className="flex items-center gap-2.5 min-w-0">
-              <StudioLogo size={36} className="shadow-xs shrink-0" />
+              <StudioLogo size={40} className="h-10 w-auto shrink-0" />
               <div className="min-w-0">
                 <span className="font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold tracking-tight block truncate">
                   MASOOM STUDIO

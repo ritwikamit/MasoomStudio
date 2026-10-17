@@ -33,34 +33,38 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
       <div className="max-w-7xl mx-auto">
         {/* SMARTPHONE-OPTIMIZED TOUCH QUICK MENU & DIRECT ACTIONS */}
         <div className="md:hidden mb-10 pb-8 border-b border-[#0f0f0e]/10">
-          <div className="flex items-center gap-3 mb-5">
-            <StudioLogo size={42} className="shrink-0" />
-            <div>
-              <span className="font-['Cormorant_Garamond',serif] text-xl font-bold uppercase tracking-tight text-[#0f0f0e] block leading-none">
-                Masoom Studio
-              </span>
-              <span className="font-['Pinyon_Script',cursive] text-base text-[#b3884c] block mt-0.5">
-                holding sacred moments in gentle light
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between mb-3 px-0.5">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-[#0f0f0e]">
-              Quick Exploration
+          {/* Big Prominent Logo for Smartphone */}
+          <div className="flex flex-col items-center text-center mb-6">
+            <StudioLogo size={96} className="h-24 w-auto mb-2 pointer-events-none" />
+            <span className="font-['Cormorant_Garamond',serif] text-2xl font-bold uppercase tracking-tight text-[#0f0f0e] block leading-none">
+              Masoom Studio
             </span>
-            <span className="text-[11px] text-[#b3884c] font-medium">
-              touch to navigate
+            <span className="font-['Pinyon_Script',cursive] text-lg text-[#b3884c] block mt-1">
+              holding sacred moments in gentle light
+            </span>
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[9.5px] tracking-[0.2em] uppercase text-[#757169] block mt-0.5">
+              Estd. 2018 · Patna, Bihar
             </span>
           </div>
 
+          {/* Quick Menus Header */}
+          <div className="flex items-center justify-between mb-3 px-1">
+            <span className="text-[11px] font-bold uppercase tracking-widest text-[#0f0f0e]">
+              Quick Menus
+            </span>
+            <span className="text-[11px] text-[#b3884c] font-semibold">
+              Touch to Explore
+            </span>
+          </div>
+
+          {/* Touch-Friendly Quick Menus Grid */}
           <div className="grid grid-cols-2 gap-2">
             <button
               onClick={() => handleNav('portfolio', 'gallery')}
               className="p-3 rounded-xl bg-[#faf8f5] active:bg-[#f2ece1] border border-[#0f0f0e]/8 flex items-center gap-2.5 transition-colors cursor-pointer text-left"
             >
               <Image className="w-4 h-4 text-[#b3884c] shrink-0" />
-              <span className="text-xs font-semibold text-[#0f0f0e]">Galleries</span>
+              <span className="text-xs font-semibold text-[#0f0f0e]">Installations</span>
             </button>
 
             <button
@@ -102,6 +106,22 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
               <Calendar className="w-4 h-4 text-[#b3884c] shrink-0" />
               <span className="text-xs font-semibold text-[#0f0f0e]">Check Availability</span>
             </button>
+
+            <button
+              onClick={() => handleNav('cookies-policy', 'cookies-policy')}
+              className="p-2.5 rounded-xl bg-[#faf8f5] active:bg-[#f2ece1] border border-[#0f0f0e]/8 flex items-center gap-2 transition-colors cursor-pointer text-left"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#b3884c] shrink-0" />
+              <span className="text-[11px] font-semibold text-[#0f0f0e]">Cookies Policy</span>
+            </button>
+
+            <button
+              onClick={() => handleNav('terms-conditions', 'terms-conditions')}
+              className="p-2.5 rounded-xl bg-[#faf8f5] active:bg-[#f2ece1] border border-[#0f0f0e]/8 flex items-center gap-2 transition-colors cursor-pointer text-left"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#b3884c] shrink-0" />
+              <span className="text-[11px] font-semibold text-[#0f0f0e]">Terms & Conditions</span>
+            </button>
           </div>
 
           {/* Quick 1-Tap Touch Contact Actions for Mobile */}
@@ -131,14 +151,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
               <span>Call Direct</span>
             </a>
           </div>
+
+          {/* Aligned Scroll Up Button for Smartphone */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="w-full mt-3.5 py-3 px-4 rounded-xl bg-[#0f0f0e] hover:bg-[#b3884c] active:bg-[#9c7237] text-white flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-xs cursor-pointer"
+            aria-label="Scroll back to top"
+          >
+            <ArrowUp className="w-4 h-4 text-[#b3884c]" />
+            <span>Back to Top</span>
+          </button>
         </div>
 
         {/* BALANCED 4-COLUMN FOOTER GRID (Optimized for PC & Tablet) */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12 pb-12 border-b border-[#0f0f0e]/10">
           {/* Column 1: Brand & Studio Manifesto */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-3">
-              <StudioLogo size={48} className="shrink-0" />
+            <div className="flex items-center gap-3.5 mb-3.5">
+              <StudioLogo size={80} className="h-16 lg:h-20 w-auto shrink-0" />
               <div>
                 <span className="font-['Cormorant_Garamond',serif] text-2xl font-bold tracking-tight text-[#0f0f0e] block uppercase leading-none">
                   Masoom Studio
@@ -322,7 +352,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4 text-xs">
             <button
               onClick={() => handleNav('cookies-policy', 'cookies-policy')}
               className="hover:text-[#b3884c] transition-colors cursor-pointer"
@@ -342,6 +372,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
               className="hover:text-[#b3884c] transition-colors cursor-pointer"
             >
               Privacy Policy
+            </button>
+            <span className="hidden sm:inline text-[#0f0f0e]/20" aria-hidden="true">·</span>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#faf8f5] hover:bg-[#0f0f0e] text-[#0f0f0e] hover:text-white border border-[#0f0f0e]/10 transition-all text-xs font-semibold cursor-pointer group"
+              aria-label="Scroll to top of page"
+            >
+              <span>Back to Top</span>
+              <ArrowUp className="w-3.5 h-3.5 text-[#b3884c] group-hover:text-white transition-colors" />
             </button>
           </div>
         </div>

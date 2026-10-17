@@ -116,18 +116,18 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
       className="relative w-full min-h-[100svh] overflow-hidden bg-[#f6f4ee] text-[#0f0f0e] flex flex-col justify-center items-center md:items-start pt-32 sm:pt-36 md:pt-44 lg:pt-48 pb-12 sm:pb-16 px-4 sm:px-8 md:px-12 lg:px-16 select-none paper-texture scroll-mt-20 md:scroll-mt-36"
       id="hero-stage"
     >
-      {/* LUCID GLASS AMBIENT LIGHTS */}
-      <div className="absolute top-1/4 left-1/4 w-[18rem] sm:w-[24rem] h-[18rem] sm:h-[24rem] rounded-full bg-[#f0e4cf]/50 blur-[90px] pointer-events-none z-0" />
-      <div className="absolute bottom-10 right-1/4 w-[20rem] sm:w-[28rem] h-[20rem] sm:h-[28rem] rounded-full bg-[#eedcc0]/40 blur-[100px] pointer-events-none z-0" />
+      {/* LUCID GLASS AMBIENT LIGHTS (Desktop Atmosphere) */}
+      <div className="hidden md:block absolute top-1/4 left-1/4 w-[24rem] h-[24rem] rounded-full bg-[#f0e4cf]/50 blur-[90px] pointer-events-none z-0" />
+      <div className="hidden md:block absolute bottom-10 right-1/4 w-[28rem] h-[28rem] rounded-full bg-[#eedcc0]/40 blur-[100px] pointer-events-none z-0" />
 
       {/* ══════════════════════════════════════════════════════════════════
           HERO BACKGROUND MOVING PHOTOS ANIMATION
           - Continuous 3-Set Triple Cascade (100% Seamless, Zero Breaking)
+          - Clear, vibrant and unobstructed on smartphone
           - Aligned strictly to the right side on PC / Tablet view
-          - Centered atmospheric motion on Smartphone view
           ══════════════════════════════════════════════════════════════════ */}
       <div
-        className="absolute inset-0 flex justify-center items-start gap-[var(--gap)] overflow-hidden pointer-events-none select-none z-10 opacity-25 sm:opacity-30 md:opacity-100 md:pointer-events-auto md:inset-auto md:top-0 md:bottom-0 md:right-0 md:h-full md:w-[48%] lg:w-[50%] xl:w-[54%] md:justify-end md:pr-4 lg:pr-8 xl:pr-12"
+        className="absolute inset-0 flex justify-center items-start gap-[var(--gap)] overflow-hidden pointer-events-none select-none z-10 opacity-80 sm:opacity-85 md:opacity-100 md:pointer-events-auto md:inset-auto md:top-0 md:bottom-0 md:right-0 md:h-full md:w-[48%] lg:w-[50%] xl:w-[54%] md:justify-end md:pr-4 lg:pr-8 xl:pr-12"
         style={{
           maskImage: 'var(--mosaic-mask)',
           WebkitMaskImage: 'var(--mosaic-mask)',
