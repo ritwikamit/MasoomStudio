@@ -38,7 +38,7 @@ export const DateEnquiryModal: React.FC<DateEnquiryModalProps> = ({
     const text = encodeURIComponent(
       `Hello Masoom Studio,\n\nWe are planning our wedding celebration and would love to check your availability.\n\nName: ${name || 'Prospective Bride/Groom'}\nDate: ${date || 'To be decided'}\nCity: ${location}\nDesired Stories: ${services.join(', ') || 'Wedding Photography'}\nCelebration Note: ${notes || 'Looking forward to hearing from you.'}`
     );
-    window.open(`https://wa.me/919122386000?text=${text}`, '_blank');
+    window.open(`https://wa.me/917488458213?text=${text}`, '_blank');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -267,23 +267,15 @@ export const DateEnquiryModal: React.FC<DateEnquiryModalProps> = ({
                 </button>
               </div>
 
-              {/* Quick direct call actions (Redirect only, no exposed numbers!) */}
-              <div className="pt-2 flex items-center justify-center gap-4 text-xs text-[#757169]">
+              {/* Quick direct call action */}
+              <div className="pt-2 flex items-center justify-center gap-3 text-xs text-[#757169]">
                 <span>Prefer speaking over phone?</span>
                 <a
                   href={STUDIO_INFO.phonePrimaryUrl}
-                  className="inline-flex items-center gap-1.5 text-[#0f0f0e] hover:text-[#b3884c] font-medium"
+                  className="inline-flex items-center gap-1.5 text-[#0f0f0e] hover:text-[#b3884c] font-semibold"
                 >
-                  <Phone className="w-3 h-3 text-[#b3884c]" />
-                  <span>Call Studio</span>
-                </a>
-                <span className="text-black/20">·</span>
-                <a
-                  href={STUDIO_INFO.phoneSecondaryUrl}
-                  className="inline-flex items-center gap-1.5 text-[#0f0f0e] hover:text-[#b3884c] font-medium"
-                >
-                  <Phone className="w-3 h-3 text-[#b3884c]" />
-                  <span>Bailey Road Line</span>
+                  <Phone className="w-3.5 h-3.5 text-[#b3884c]" />
+                  <span>Call +91 7488458213</span>
                 </a>
               </div>
             </form>

@@ -48,6 +48,16 @@ export const StudioLocation: React.FC<StudioLocationProps> = ({ onOpenEnquiry })
                   <span>Tuesday through Sunday · By prior personal appointment</span>
                 </div>
               </div>
+
+              <div className="flex items-start gap-3">
+                <Phone className="w-4 h-4 text-[#b3884c] shrink-0 mt-1" />
+                <div>
+                  <strong className="text-[#0f0f0e] block font-semibold">Direct Call & WhatsApp:</strong>
+                  <a href={STUDIO_INFO.phonePrimaryUrl} className="hover:text-[#b3884c] transition-colors font-semibold text-[#0f0f0e]">
+                    +91 7488458213
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* DIRECT ACTION BUTTONS (Clean Responsive Grid for Smartphone) */}
@@ -63,27 +73,24 @@ export const StudioLocation: React.FC<StudioLocationProps> = ({ onOpenEnquiry })
                 <span>Chat on WhatsApp</span>
               </a>
 
-              {/* Call Director Redirect */}
+              {/* Call Director Direct */}
               <a
                 href={STUDIO_INFO.phonePrimaryUrl}
-                className="px-5 py-3 rounded-xl bg-[#141210] hover:bg-[#b3884c] text-white text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-colors"
-                title="Direct call to Studio Director"
-                aria-label="Call Studio Director"
+                className="px-5 py-3 rounded-xl bg-[#141210] hover:bg-[#b3884c] text-white text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-colors shadow-xs"
+                title="Direct call to Masoom Studio: +91 7488458213"
+                aria-label="Call +91 7488458213"
               >
                 <Phone className="w-3.5 h-3.5 fill-current" />
-                <span>Call Studio</span>
+                <span>Call +91 7488458213</span>
               </a>
 
-              {/* Call Bailey Road Direct */}
-              <a
-                href={STUDIO_INFO.phoneSecondaryUrl}
-                className="px-4 py-3 rounded-xl bg-[#f6f4ee] hover:bg-[#b3884c]/20 text-[#0f0f0e] text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-colors border border-[#0f0f0e]/10"
-                title="Direct call to Bailey Road Line"
-                aria-label="Call Bailey Road Studio"
+              {/* Check Availability */}
+              <button
+                onClick={onOpenEnquiry}
+                className="px-4 py-3 rounded-xl bg-[#f6f4ee] hover:bg-[#b3884c]/20 text-[#0f0f0e] text-xs font-semibold uppercase tracking-wider inline-flex items-center justify-center gap-2 transition-colors border border-[#0f0f0e]/10 cursor-pointer"
               >
-                <Phone className="w-3.5 h-3.5 text-[#b3884c]" />
-                <span>Bailey Road Line</span>
-              </a>
+                <span>Check Date Availability</span>
+              </button>
 
               {/* Maps Link */}
               <a

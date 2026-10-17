@@ -45,11 +45,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             <a
               href={STUDIO_INFO.phonePrimaryUrl}
               className="inline-flex items-center gap-1.5 hover:text-[#b3884c] transition-colors group"
-              title="Speak with our Studio Director"
-              aria-label="Call Patna Studio Director"
+              title="Call Masoom Studio: +91 7488458213"
+              aria-label="Call Masoom Studio: +91 7488458213"
             >
               <Phone className="w-3.5 h-3.5 text-[#b3884c] group-hover:scale-110 transition-transform" />
-              <span className="font-medium tracking-tight">Studio Direct Call</span>
+              <span className="font-medium tracking-tight">Call: +91 7488458213</span>
             </a>
 
             <div className="w-[1px] h-3.5 bg-[#0f0f0e]/15" aria-hidden="true" />

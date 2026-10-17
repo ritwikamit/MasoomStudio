@@ -56,11 +56,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
             <div className="mt-5 flex flex-wrap gap-2">
               <a
                 href={STUDIO_INFO.phonePrimaryUrl}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#faf8f5] hover:bg-[#b3884c] text-[#0f0f0e] hover:text-white transition-all text-xs font-medium border border-[#0f0f0e]/8"
-                title="Speak directly with Studio Director"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#faf8f5] hover:bg-[#b3884c] text-[#0f0f0e] hover:text-white transition-all text-xs font-semibold border border-[#0f0f0e]/8"
+                title="Direct call to Masoom Studio: +91 7488458213"
               >
                 <Phone className="w-3 h-3 text-[#b3884c]" />
-                <span>Call Studio</span>
+                <span>+91 7488458213</span>
               </a>
 
               <a

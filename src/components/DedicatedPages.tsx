@@ -40,7 +40,7 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
     const text = encodeURIComponent(
       `Hello Masoom Studio,\n\nWe are planning our wedding celebration and would love to check your availability.\n\nName: ${name || 'Prospective Bride/Groom'}\nDate: ${date || 'To be decided'}\nCity: ${location}\nDesired Stories: ${selectedServices.join(', ') || 'Wedding Photography'}\nCelebration Note: ${notes || 'Looking forward to hearing from you.'}`
     );
-    window.open(`https://wa.me/919122386000?text=${text}`, '_blank');
+    window.open(`https://wa.me/917488458213?text=${text}`, '_blank');
   };
 
   const handleSubmitDates = (e: React.FormEvent) => {

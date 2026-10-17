@@ -47,10 +47,11 @@ export const STUDIO_INFO = {
   est: "2018",
   tagline: "Holding your sacred moments in gentle light",
   address: "Bailey Road, near Paras Hospital, Pillar No. 42, Patna, Bihar",
-  // Phone and whatsapp links for redirects (never displayed as raw exposed numbers)
-  phonePrimaryUrl: "tel:+919122386000",
-  phoneSecondaryUrl: "tel:+919122386001",
-  whatsappUrl: "https://wa.me/919122386000?text=Hello%20Masoom%20Studio%2C%20we%20are%20planning%20our%20wedding%20and%20would%20love%20to%20talk%20about%20your%20storytelling.",
+  // Phone and whatsapp links for redirects
+  phoneNumber: "+91 7488458213",
+  phonePrimaryUrl: "tel:+917488458213",
+  phoneSecondaryUrl: "tel:+917488458213",
+  whatsappUrl: "https://wa.me/917488458213?text=Hello%20Masoom%20Studio%2C%20we%20are%20planning%20our%20wedding%20and%20would%20love%20to%20talk%20about%20your%20storytelling.",
   emailUrl: "mailto:contact@masoomstudio.in",
   instagram: "https://www.instagram.com/masoomstudio.in/",
   youtube: "https://www.youtube.com/@masoomstudio",
