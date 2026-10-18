@@ -292,10 +292,10 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     couple: "Tanvi Verma",
     location: "Heritage Suite, Patna",
     year: "2025",
-    imageUrl: "/Gallary/imgi_43_655431071_18158067241437459_47542197678496787_n.jpg",
+    imageUrl: "/Gallary/imgi_16_792820577_17989635195160466_3434238158816086773_n.jpg",
     aspect: "portrait",
-    imagePosition: "object-[66%_76%]",
-    description: "Standing in the warm natural amber light of the ancestral room, adorned in heirloom polki diamonds.",
+    imagePosition: "object-[center_28%]",
+    description: "Adorned in heirloom polki diamonds and intricately handwoven zardozi, radiating calm poise and royal heritage grace.",
     emotionalExcerpt: "Dignity, heritage, and quiet regal grace.",
     exif: {
       lens: "85mm f/1.4 GM",
