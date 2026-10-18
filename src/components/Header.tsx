@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { STUDIO_INFO } from '../data/portfolioData';
-import { Phone, Search, Menu as MenuIcon, X, ArrowUpRight, Layers, Film, Camera, Heart, MapPin } from 'lucide-react';
+import { Phone, Search, Menu as MenuIcon, X, ArrowUpRight, Layers, Film, Camera, Heart, MapPin, Sparkles } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { StudioLogo } from './StudioLogo';
 
 interface HeaderProps {
+  currentPage?: string;
   onOpenEnquiry: () => void;
   onOpenSearch?: () => void;
   onNavigatePage?: (page: string) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onNavigatePage }) => {
+export const Header: React.FC<HeaderProps> = ({ currentPage, onOpenEnquiry, onOpenSearch, onNavigatePage }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleNav = (targetId: string, pageName?: string) => {
@@ -67,18 +68,41 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             </a>
           </div>
 
-          {/* ICON-FIRST LINKS: Smooth Attached Text Reveal on Hover */}
+          {/* ICON-FIRST LINKS: Smooth Attached Text Reveal on Hover (All Distinct Pages) */}
           <nav className="ml-auto flex items-center gap-1.5 text-[12px] font-medium text-[#45423d]" aria-label="Quick links">
-            {/* Programmes Icon Button */}
+            {/* Installations Icon Button */}
             <button
-              onClick={() => handleNav('portfolio', 'gallery')}
-              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
-              title="Programmes"
-              aria-label="Programmes"
+              onClick={() => handleNav('installations', 'installations')}
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 cursor-pointer overflow-hidden ${
+                currentPage === 'installations'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
+              title="Installations"
+              aria-label="Installations"
             >
               <Layers className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
               <span className="max-w-0 opacity-0 group-hover:max-w-[95px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
-                Programmes
+                Installations
+              </span>
+            </button>
+
+            <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+
+            {/* Photographs Icon Button */}
+            <button
+              onClick={() => handleNav('gallery', 'gallery')}
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 cursor-pointer overflow-hidden ${
+                currentPage === 'gallery'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
+              title="Photographs"
+              aria-label="Photographs"
+            >
+              <Camera className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[95px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Photographs
               </span>
             </button>
 
@@ -87,7 +111,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Films Icon Button */}
             <button
               onClick={() => handleNav('films', 'films')}
-              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 cursor-pointer overflow-hidden ${
+                currentPage === 'films'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
               title="Films"
               aria-label="Films"
             >
@@ -102,11 +130,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Photo-prints Icon Button */}
             <button
               onClick={() => handleNav('services', 'services')}
-              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
-              title="Photo-prints"
-              aria-label="Photo-prints"
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 cursor-pointer overflow-hidden ${
+                currentPage === 'services'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
+              title="Photo-prints & Albums"
+              aria-label="Photo-prints & Albums"
             >
-              <Camera className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <Layers className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
               <span className="max-w-0 opacity-0 group-hover:max-w-[95px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
                 Photo-prints
               </span>
@@ -117,7 +149,11 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Our Heart Icon Button */}
             <button
               onClick={() => handleNav('philosophy', 'philosophy')}
-              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 cursor-pointer overflow-hidden ${
+                currentPage === 'philosophy'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
               title="Our Heart"
               aria-label="Our Heart"
             >
@@ -132,33 +168,39 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             {/* Visits Icon Button */}
             <button
               onClick={() => handleNav('location', 'location')}
-              className="group flex items-center gap-1.5 h-7 px-2 rounded-full hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 cursor-pointer overflow-hidden"
-              title="Visits"
-              aria-label="Visits"
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 cursor-pointer overflow-hidden ${
+                currentPage === 'location'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'hover:bg-[#b3884c]/15 text-[#45423d] hover:text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
+              title="Studio Visit"
+              aria-label="Studio Visit"
             >
               <MapPin className="w-3.5 h-3.5 text-[#b3884c] shrink-0 transition-transform duration-300 group-hover:scale-110" />
-              <span className="max-w-0 opacity-0 group-hover:max-w-[65px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
-                Visits
+              <span className="max-w-0 opacity-0 group-hover:max-w-[75px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Studio Visit
               </span>
             </button>
 
-            {onOpenSearch && (
-              <>
-                <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
-                <button
-                  onClick={onOpenSearch}
-                  className="group flex items-center gap-1.5 h-7 px-2 rounded-full bg-[#0f0f0e]/5 hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-transparent hover:border-[#b3884c]/30 transition-all duration-300 ml-0.5 cursor-pointer overflow-hidden"
-                  aria-label="Search archive"
-                  type="button"
-                  title="Search archive"
-                >
-                  <Search className="w-3.5 h-3.5 text-[#0f0f0e] shrink-0 transition-transform duration-300 group-hover:scale-110" />
-                  <span className="max-w-0 opacity-0 group-hover:max-w-[70px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
-                    Search
-                  </span>
-                </button>
-              </>
-            )}
+            <div className="w-[1px] h-3 bg-[#0f0f0e]/10" aria-hidden="true" />
+
+            {/* Search Icon Button */}
+            <button
+              onClick={() => handleNav('search', 'search')}
+              className={`group flex items-center gap-1.5 h-7 px-2 rounded-full border transition-all duration-300 ml-0.5 cursor-pointer overflow-hidden ${
+                currentPage === 'search'
+                  ? 'bg-[#b3884c]/20 border-[#b3884c]/40 text-[#0f0f0e]'
+                  : 'bg-[#0f0f0e]/5 hover:bg-[#b3884c]/15 text-[#0f0f0e] border-transparent hover:border-[#b3884c]/30'
+              }`}
+              aria-label="Visual Search Archive"
+              type="button"
+              title="Search archive"
+            >
+              <Search className="w-3.5 h-3.5 text-[#0f0f0e] shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="max-w-0 opacity-0 group-hover:max-w-[70px] group-hover:opacity-100 transition-all duration-300 ease-out text-[11px] font-semibold text-[#0f0f0e] whitespace-nowrap overflow-hidden">
+                Search
+              </span>
+            </button>
           </nav>
         </div>
 
@@ -183,36 +225,65 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             </div>
           </button>
 
-          {/* MAIN NAVIGATION (Desktop) */}
-          <nav className="hidden lg:flex items-center gap-7" aria-label="Main navigation">
+          {/* MAIN NAVIGATION (Desktop) - Every link routes to a DISTINCT dedicated page */}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Main navigation">
             <button
-              onClick={() => handleNav('portfolio', 'gallery')}
-              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+              onClick={() => handleNav('installations', 'installations')}
+              className={`text-[13.5px] xl:text-[14.5px] font-semibold transition-colors cursor-pointer ${
+                currentPage === 'installations' ? 'text-[#b3884c] font-bold' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
-              <span>Installations</span>
-              <span className="w-5.5 h-5.5 rounded-full bg-[#0f0f0e] text-white inline-flex items-center justify-center transition-transform hover:scale-105">
-                <ArrowUpRight className="w-3 h-3" />
-              </span>
+              Installations
             </button>
 
-            <div className="w-[1px] h-4 bg-[#0f0f0e]/15" aria-hidden="true" />
-
             <button
-              onClick={() => handleNav('philosophy', 'philosophy')}
-              className="text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
-            >
-              Interviews & Craft
-            </button>
-            <button
-              onClick={() => handleNav('portfolio', 'gallery')}
-              className="text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+              onClick={() => handleNav('gallery', 'gallery')}
+              className={`text-[13.5px] xl:text-[14.5px] font-semibold transition-colors cursor-pointer ${
+                currentPage === 'gallery' ? 'text-[#b3884c] font-bold' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
               Photographs
             </button>
 
             <button
+              onClick={() => handleNav('films', 'films')}
+              className={`text-[13.5px] xl:text-[14.5px] font-semibold transition-colors cursor-pointer ${
+                currentPage === 'films' ? 'text-[#b3884c] font-bold' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
+            >
+              Wedding Cinema
+            </button>
+
+            <button
+              onClick={() => handleNav('philosophy', 'philosophy')}
+              className={`text-[13.5px] xl:text-[14.5px] font-semibold transition-colors cursor-pointer ${
+                currentPage === 'philosophy' ? 'text-[#b3884c] font-bold' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
+            >
+              Interviews & Craft
+            </button>
+
+            <button
+              onClick={() => handleNav('services', 'services')}
+              className={`text-[13.5px] xl:text-[14.5px] font-semibold transition-colors cursor-pointer ${
+                currentPage === 'services' ? 'text-[#b3884c] font-bold' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
+            >
+              Services & Albums
+            </button>
+
+            <button
+              onClick={() => handleNav('location', 'location')}
+              className={`text-[13.5px] xl:text-[14.5px] font-semibold transition-colors cursor-pointer ${
+                currentPage === 'location' ? 'text-[#b3884c] font-bold' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
+            >
+              Studio Visit
+            </button>
+
+            <button
               onClick={() => setMobileMenuOpen(true)}
-              className="inline-flex items-center gap-1.5 text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-[13.5px] xl:text-[14.5px] font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-colors cursor-pointer"
               type="button"
             >
               <MenuIcon className="w-4 h-4" />
@@ -220,11 +291,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             </button>
           </nav>
 
-          {/* CTA GROUP - Just the Check Date button, NO ICON, Clean & Perfectly Aligned */}
+          {/* CTA GROUP - Check Date button routes to distinct Check Dates page */}
           <div className="flex items-center gap-2 shrink-0">
             <button
-              onClick={onOpenEnquiry}
-              className="h-8 sm:h-10 md:h-11 px-3.5 sm:px-5 md:px-6 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-full font-bold text-xs sm:text-xs md:text-[14px] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-xs whitespace-nowrap"
+              onClick={() => handleNav('check-dates', 'check-dates')}
+              className={`h-8 sm:h-10 md:h-11 px-3.5 sm:px-5 md:px-6 rounded-full font-bold text-xs sm:text-xs md:text-[14px] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-xs whitespace-nowrap ${
+                currentPage === 'check-dates' ? 'bg-[#b3884c] text-white' : 'bg-[#0f0f0e] hover:bg-[#b3884c] text-white'
+              }`}
             >
               Check Date
             </button>
@@ -270,41 +343,69 @@ export const Header: React.FC<HeaderProps> = ({ onOpenEnquiry, onOpenSearch, onN
             </button>
           </div>
 
-          <div className="my-8 flex flex-col gap-5 sm:gap-6">
+          <div className="my-6 sm:my-8 flex flex-col gap-4 sm:gap-5">
+            <button
+              onClick={() => handleNav('installations', 'installations')}
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'installations' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
+            >
+              <span>01. Grand Installations</span>
+              <Sparkles className="w-4 h-4 text-[#b3884c]" />
+            </button>
             <button
               onClick={() => handleNav('portfolio', 'gallery')}
-              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'gallery' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
-              <span>01. The Photographic Archive</span>
+              <span>02. The Photographic Archive</span>
               <Layers className="w-4 h-4 text-[#b3884c]" />
             </button>
             <button
               onClick={() => handleNav('films', 'films')}
-              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'films' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
-              <span>02. Wedding Cinema Films</span>
+              <span>03. Wedding Cinema Films</span>
               <Film className="w-4 h-4 text-[#b3884c]" />
             </button>
             <button
               onClick={() => handleNav('philosophy', 'philosophy')}
-              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'philosophy' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
-              <span>03. Interviews & Philosophy</span>
+              <span>04. Interviews & Philosophy</span>
               <Heart className="w-4 h-4 text-[#b3884c]" />
             </button>
             <button
               onClick={() => handleNav('services', 'services')}
-              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'services' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
-              <span>04. Photo-Prints & Albums</span>
+              <span>05. Photo-Prints & Albums</span>
               <Camera className="w-4 h-4 text-[#b3884c]" />
             </button>
             <button
               onClick={() => handleNav('location', 'location')}
-              className="text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight hover:text-[#b3884c] transition-colors cursor-pointer flex items-center justify-between"
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'location' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
             >
-              <span>05. Visits & Consultations</span>
+              <span>06. Visits & Consultations</span>
               <MapPin className="w-4 h-4 text-[#b3884c]" />
+            </button>
+            <button
+              onClick={() => handleNav('search', 'search')}
+              className={`text-left font-['Cormorant_Garamond',serif] text-xl sm:text-2xl font-bold uppercase tracking-tight transition-colors cursor-pointer flex items-center justify-between ${
+                currentPage === 'search' ? 'text-[#b3884c]' : 'text-[#0f0f0e] hover:text-[#b3884c]'
+              }`}
+            >
+              <span>07. Visual Archive Search</span>
+              <Search className="w-4 h-4 text-[#b3884c]" />
             </button>
           </div>
 

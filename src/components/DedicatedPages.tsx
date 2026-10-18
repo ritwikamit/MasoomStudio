@@ -1,23 +1,140 @@
 import React, { useState } from 'react';
 import { PORTFOLIO_ITEMS, FILM_ITEMS, SERVICES, STUDIO_INFO, PortfolioItem } from '../data/portfolioData';
-import { ArrowLeft, Play, MapPin, Camera, Clock, Check, ArrowRight, Heart, CheckCircle2, ExternalLink } from 'lucide-react';
+import {
+  ArrowLeft,
+  Play,
+  MapPin,
+  Camera,
+  Clock,
+  Check,
+  ArrowRight,
+  Heart,
+  CheckCircle2,
+  ExternalLink,
+  Search,
+  Sparkles,
+  Building2,
+  Layers,
+  Film,
+  X,
+  SlidersHorizontal,
+  Tag,
+  Share2,
+} from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
-interface DedicatedPagesProps {
-  currentPage: 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates' | 'cookies-policy' | 'terms-conditions';
+export interface DedicatedPagesProps {
+  currentPage:
+    | 'gallery'
+    | 'installations'
+    | 'films'
+    | 'philosophy'
+    | 'services'
+    | 'location'
+    | 'check-dates'
+    | 'search'
+    | 'cookies-policy'
+    | 'terms-conditions';
   onBackToHome: () => void;
   onSelectPhoto: (item: PortfolioItem) => void;
   onOpenEnquiry: (serviceName?: string) => void;
+  onNavigatePage?: (page: string) => void;
 }
+
+export interface InstallationItem {
+  id: string;
+  title: string;
+  venue: string;
+  location: string;
+  season: string;
+  imageUrl: string;
+  atmosphere: string;
+  highlights: string[];
+  lightingProfile: string;
+}
+
+export const INSTALLATIONS: InstallationItem[] = [
+  {
+    id: 'inst-1',
+    title: 'The Royal Glasshouse & Floral Pavilion',
+    venue: 'Raj Resort & Gardens',
+    location: 'Bailey Road Corridor, Patna',
+    season: 'Winter Nocturne',
+    imageUrl: '/SignatureImage/imgi_20_622289146_17972843666834908_8509481171627861222_n.jpg',
+    atmosphere: 'A seamless synthesis of European conservatory aesthetics and timeless Magadh regal florals.',
+    highlights: ['12-Foot Tuberose Rain Curtain', 'Golden Tungsten Chandeliers', 'Mirror Glass Reflective Aisle', 'White Orchids & Marigold Cascades'],
+    lightingProfile: '2800K warm filament tungsten + balanced soft diffuse fill for 4K cinema cameras',
+  },
+  {
+    id: 'inst-2',
+    title: 'The Mughal Courtyard & Candlelit Mandap',
+    venue: 'Umrao Banquet & Lawns',
+    location: 'Bailey Road, Patna',
+    season: 'Autumn Twilight',
+    imageUrl: '/SignatureImage/imgi_23_712643826_17972376771160466_3971202427154637297_n.jpg',
+    atmosphere: 'Designed to evoke the solemn stillness of 18th-century court weddings with deep crimson and pure brass warmth.',
+    highlights: ['Over 2,000 Live Brass Diyas', 'Carved Jali Archway Pillars', 'Hand-Dyed Crimson Velvet Drapes', 'Mogra Floral Garlands'],
+    lightingProfile: 'Natural havan flame reflections with subtle key fill to preserve the sacred glow',
+  },
+  {
+    id: 'inst-3',
+    title: 'Sacred Bodhi Sanctuary Stage',
+    venue: 'Heritage Resort & Sanctum',
+    location: 'Bodh Gaya, Bihar',
+    season: 'Spring Equinox',
+    imageUrl: '/SignatureImage/imgi_24_710468089_17972373231160466_6423309497429095746_n.jpg',
+    atmosphere: 'Earthy, meditative elegance honoring ancient architectural proportions and tranquil calm under open sky.',
+    highlights: ['Carved Sandstone Archway Motif', 'Organic Terracotta Diyas', 'Earthy Lotus Ponds', 'Unbleached Cotton Linen Draping'],
+    lightingProfile: 'Golden hour sunset transition with natural amber rim-light',
+  },
+  {
+    id: 'inst-4',
+    title: 'Riverfront Ganga Grand Horizon',
+    venue: 'Luxury Ganga Promenade & Courtyard',
+    location: 'Patna Ghats',
+    season: 'Winter Dusk',
+    imageUrl: '/SignatureImage/imgi_32_702695987_17969751702160466_2951487923943233506_n.jpg',
+    atmosphere: 'Panoramic celebration as the sacred Ganga carries the evening aarti breeze, framed by minimalist floral pillars.',
+    highlights: ['Open-Sky Mandap Canopy', 'Riverside Mirror Pools', 'Live Shehnai Acoustic Deck', 'Ivory Georgette Billows'],
+    lightingProfile: 'Blue twilight sky contrast with warm 3000K mandap spotlighting',
+  },
+  {
+    id: 'inst-5',
+    title: 'Heirloom Palace Courtyard & Royal Aisles',
+    venue: 'Private Heritage Estate & Haveli',
+    location: 'Central Bihar',
+    season: 'Winter Solstice',
+    imageUrl: '/SignatureImage/imgi_35_648245666_17957908989160466_1465758617195676549_n.jpg',
+    atmosphere: 'Unapologetic royal grandeur tailored for multi-day heirloom festivities with expansive family gatherings.',
+    highlights: ['Cascading White Jasmine Arches', 'Vintage Belgian Glass Lanterns', 'Mirrored Walkway Path', 'Handcrafted Throne Seating'],
+    lightingProfile: 'Evenly balanced high-CRI cinema lighting for 10-bit color-accurate fabrics',
+  },
+  {
+    id: 'inst-6',
+    title: 'The Twilight Sangeet Stage & Kinetic Light Canopy',
+    venue: 'Celebration Lawns & Amphitheatre',
+    location: 'Patna',
+    season: 'Annual Gala',
+    imageUrl: '/SignatureImage/imgi_10_620266125_17907545478161915_4102420289312451089_n.jpg',
+    atmosphere: 'Electric high-energy revelry wrapped in refined architectural stage design and concert-grade acoustics.',
+    highlights: ['Cascading Fairy Light Waterfall', 'Kinetic Tube Lighting Arrays', 'Elevated Live Brass & Dhol Deck', 'Custom Monogram Backdrops'],
+    lightingProfile: 'Synchronized concert fixtures tuned for 120fps high-speed cinematic slow-motion',
+  },
+];
 
 export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
   currentPage,
   onBackToHome,
   onSelectPhoto,
   onOpenEnquiry,
+  onNavigatePage,
 }) => {
   // Films Page State
   const [activeFilmId, setActiveFilmId] = useState<string | null>(null);
+
+  // Search Page State
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchCategory, setSearchCategory] = useState<'all' | 'weddings' | 'pre-wedding' | 'films' | 'installations'>('all');
 
   // Check Dates Page State
   const [name, setName] = useState('');
@@ -54,6 +171,82 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
     setIsSubmitted(true);
   };
 
+  const getPageHeaderTitle = () => {
+    switch (currentPage) {
+      case 'gallery':
+        return 'The Photographic Archive';
+      case 'installations':
+        return 'Grand Installations & Venues';
+      case 'films':
+        return 'Masoom Wedding Cinema';
+      case 'philosophy':
+        return 'Interviews & Craft Manifesto';
+      case 'services':
+        return 'Services & Heirloom Albums';
+      case 'location':
+        return 'Studio Visit & Directions';
+      case 'check-dates':
+        return 'Seasonal Date Availability';
+      case 'search':
+        return 'Visual Archive Discovery';
+      case 'cookies-policy':
+        return 'Studio Transparency & Cookies';
+      case 'terms-conditions':
+        return 'Terms of Commission';
+      default:
+        return 'Masoom Studio Archives';
+    }
+  };
+
+  // Search Filtering Logic
+  const filteredPhotos = PORTFOLIO_ITEMS.filter((item) => {
+    const matchesCat =
+      searchCategory === 'all'
+        ? true
+        : searchCategory === 'weddings'
+        ? item.category === 'weddings'
+        : searchCategory === 'pre-wedding'
+        ? item.category === 'pre-wedding'
+        : false;
+    if (!matchesCat) return false;
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      item.title.toLowerCase().includes(q) ||
+      item.couple.toLowerCase().includes(q) ||
+      item.location.toLowerCase().includes(q) ||
+      item.description.toLowerCase().includes(q) ||
+      item.categoryLabel.toLowerCase().includes(q)
+    );
+  });
+
+  const filteredFilms = FILM_ITEMS.filter((film) => {
+    if (searchCategory !== 'all' && searchCategory !== 'films') return false;
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      film.title.toLowerCase().includes(q) ||
+      film.couple.toLowerCase().includes(q) ||
+      film.location.toLowerCase().includes(q) ||
+      film.synopsis.toLowerCase().includes(q)
+    );
+  });
+
+  const filteredInstallations = INSTALLATIONS.filter((inst) => {
+    if (searchCategory !== 'all' && searchCategory !== 'installations') return false;
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      inst.title.toLowerCase().includes(q) ||
+      inst.venue.toLowerCase().includes(q) ||
+      inst.location.toLowerCase().includes(q) ||
+      inst.atmosphere.toLowerCase().includes(q) ||
+      inst.highlights.some((h) => h.toLowerCase().includes(q))
+    );
+  });
+
+  const totalResultsCount = filteredPhotos.length + filteredFilms.length + filteredInstallations.length;
+
   return (
     <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] pt-36 sm:pt-40 md:pt-44 lg:pt-48 pb-24 px-3.5 sm:px-6 md:px-12 max-w-7xl mx-auto animate-in fade-in duration-300">
       {/* Top Back Navigation Bar - Positioned cleanly below floating header */}
@@ -69,7 +262,7 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
         </button>
 
         <span className="font-['Pinyon_Script',cursive] text-xl sm:text-2xl md:text-3xl text-[#b3884c] text-right whitespace-nowrap min-w-0">
-          {currentPage === 'films' ? 'Masoom Video Archives' : 'Masoom Studio Archives'}
+          {getPageHeaderTitle()}
         </span>
       </div>
 
@@ -782,6 +975,489 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
               </button>
             </section>
           </div>
+        </div>
+      )}
+
+      {/* 8. DEDICATED INSTALLATIONS PAGE */}
+      {currentPage === 'installations' && (
+        <div>
+          <div className="mb-10 sm:mb-12">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b3884c] block mb-2">
+              Architectural Scenography & Venues
+            </span>
+            <h1 className="font-['Cormorant_Garamond',serif] text-3xl sm:text-4xl md:text-6xl font-bold uppercase tracking-tight text-[#0f0f0e]">
+              Grand Wedding Installations
+            </h1>
+            <p className="mt-3 text-sm sm:text-base text-[#524e47] max-w-2xl leading-relaxed">
+              Every sacred celebration is an immersion in heritage craft and spatial elegance. Explore our documentation of royal glasshouses, candlelit mandap courtyards, and palatial venue architecture across Bihar.
+            </p>
+
+            {/* Quick Stat Highlights */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 mt-6 max-w-2xl">
+              <div className="p-3.5 rounded-2xl bg-white border border-[#0f0f0e]/10">
+                <span className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#b3884c] block">18+ Mandaps</span>
+                <span className="text-[11px] text-[#757169] uppercase tracking-wider font-semibold">Architectural Concepts</span>
+              </div>
+              <div className="p-3.5 rounded-2xl bg-white border border-[#0f0f0e]/10">
+                <span className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#b3884c] block">6 Elite Venues</span>
+                <span className="text-[11px] text-[#757169] uppercase tracking-wider font-semibold">Curated in Bihar</span>
+              </div>
+              <div className="col-span-2 sm:col-span-1 p-3.5 rounded-2xl bg-white border border-[#0f0f0e]/10">
+                <span className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#b3884c] block">High-CRI Film</span>
+                <span className="text-[11px] text-[#757169] uppercase tracking-wider font-semibold">Cinema Lighting Calibrated</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Installations Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {INSTALLATIONS.map((inst) => (
+              <div
+                key={inst.id}
+                className="bg-white rounded-3xl overflow-hidden border border-[#0f0f0e]/10 shadow-sm hover:shadow-xl transition-all flex flex-col group"
+              >
+                {/* Visual Imagery */}
+                <div className="aspect-[16/11] relative overflow-hidden bg-black/5">
+                  <img
+                    src={inst.imageUrl}
+                    alt={inst.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 left-3 bg-[#0f0f0e]/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/15">
+                    {inst.season}
+                  </div>
+                  <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md p-2.5 rounded-xl border border-[#0f0f0e]/10 flex items-center justify-between text-xs">
+                    <span className="font-bold text-[#0f0f0e] truncate">{inst.venue}</span>
+                    <span className="text-[#757169] text-[11px] shrink-0 ml-2">{inst.location}</span>
+                  </div>
+                </div>
+
+                {/* Details */}
+                <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#0f0f0e] leading-snug group-hover:text-[#b3884c] transition-colors">
+                      {inst.title}
+                    </h3>
+
+                    <p className="mt-2 text-xs sm:text-[13px] text-[#524e47] leading-relaxed italic">
+                      "{inst.atmosphere}"
+                    </p>
+
+                    {/* Highlights bullet pills */}
+                    <div className="mt-4 pt-3 border-t border-[#0f0f0e]/8">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#757169] block mb-2">
+                        Craft & Floral Elements:
+                      </span>
+                      <div className="flex flex-wrap gap-1.5">
+                        {inst.highlights.map((h, i) => (
+                          <span
+                            key={i}
+                            className="text-[11px] bg-[#f6f4ee] text-[#0f0f0e] px-2.5 py-1 rounded-lg border border-[#0f0f0e]/8 font-medium"
+                          >
+                            {h}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Lighting Scheme Badge */}
+                    <div className="mt-4 p-3 rounded-xl bg-[#faf8f5] border border-[#b3884c]/20 flex items-start gap-2 text-xs">
+                      <Sparkles className="w-3.5 h-3.5 text-[#b3884c] shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-bold text-[#b3884c] block text-[10.5px] uppercase tracking-wider">Cinema Lighting Setup</span>
+                        <span className="text-[#524e47] text-[11.5px] leading-tight block mt-0.5">{inst.lightingProfile}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Actions */}
+                  <div className="mt-6 pt-4 border-t border-[#0f0f0e]/8 flex items-center justify-between gap-3">
+                    <button
+                      onClick={() => onOpenEnquiry(`Installation Coverage: ${inst.venue}`)}
+                      className="flex-1 py-2.5 px-3 rounded-xl bg-[#0f0f0e] hover:bg-[#b3884c] text-white text-xs font-bold transition-all text-center cursor-pointer shadow-xs"
+                    >
+                      Inquire Venue Coverage
+                    </button>
+                    <a
+                      href={`https://wa.me/917488458213?text=${encodeURIComponent(
+                        `Hello Masoom Studio, I am inquiring about wedding coverage for the installation setup at ${inst.venue} (${inst.title}).`
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-xl border border-[#25D366]/40 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] transition-colors cursor-pointer shrink-0"
+                      title="Chat on WhatsApp about this venue"
+                    >
+                      <WhatsAppIcon className="w-4 h-4 text-[#25D366]" size={16} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 9. DEDICATED VISUAL SEARCH ARCHIVE PAGE */}
+      {currentPage === 'search' && (
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="mb-8 sm:mb-10 text-center">
+            <span className="text-xs font-semibold tracking-[0.2em] uppercase text-[#b3884c] block mb-2">
+              Instant Visual Discovery
+            </span>
+            <h1 className="font-['Cormorant_Garamond',serif] text-3xl sm:text-5xl md:text-6xl font-bold uppercase tracking-tight text-[#0f0f0e]">
+              Visual Archive Search
+            </h1>
+            <p className="mt-3 text-sm sm:text-base text-[#524e47] max-w-xl mx-auto leading-relaxed">
+              Explore our complete repository across Bihar weddings, royal pheras, cinema films, and mandap installations.
+            </p>
+          </div>
+
+          {/* Interactive Search Bar & Filter Strip */}
+          <div className="bg-white rounded-3xl p-4 sm:p-6 border border-[#0f0f0e]/12 shadow-sm mb-8 sm:mb-10">
+            {/* Search Input Field */}
+            <div className="relative flex items-center">
+              <Search className="w-5 h-5 text-[#b3884c] absolute left-4 shrink-0 pointer-events-none" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search weddings, couples, pheras, Patna, mandap, films..."
+                className="w-full pl-12 pr-12 py-3.5 bg-[#f6f4ee]/80 border border-[#0f0f0e]/10 rounded-2xl text-sm sm:text-base text-[#0f0f0e] placeholder-[#757169] focus:outline-none focus:border-[#b3884c] focus:bg-white transition-all shadow-inner"
+                autoFocus
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-4 p-1 rounded-full hover:bg-black/5 text-[#757169] hover:text-[#0f0f0e] transition-colors cursor-pointer"
+                  title="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Category Filter Chips */}
+            <div className="flex flex-wrap items-center gap-2 mt-4 pt-4 border-t border-[#0f0f0e]/8">
+              <span className="text-xs text-[#757169] font-medium mr-1 flex items-center gap-1.5">
+                <SlidersHorizontal className="w-3.5 h-3.5 text-[#b3884c]" /> Filter:
+              </span>
+
+              <button
+                onClick={() => setSearchCategory('all')}
+                className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+                  searchCategory === 'all'
+                    ? 'bg-[#0f0f0e] text-white shadow-xs'
+                    : 'bg-[#f6f4ee] hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-[#0f0f0e]/10'
+                }`}
+              >
+                All Archives ({PORTFOLIO_ITEMS.length + FILM_ITEMS.length + INSTALLATIONS.length})
+              </button>
+
+              <button
+                onClick={() => setSearchCategory('weddings')}
+                className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+                  searchCategory === 'weddings'
+                    ? 'bg-[#0f0f0e] text-white shadow-xs'
+                    : 'bg-[#f6f4ee] hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-[#0f0f0e]/10'
+                }`}
+              >
+                Weddings
+              </button>
+
+              <button
+                onClick={() => setSearchCategory('pre-wedding')}
+                className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+                  searchCategory === 'pre-wedding'
+                    ? 'bg-[#0f0f0e] text-white shadow-xs'
+                    : 'bg-[#f6f4ee] hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-[#0f0f0e]/10'
+                }`}
+              >
+                Pre-Wedding
+              </button>
+
+              <button
+                onClick={() => setSearchCategory('films')}
+                className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+                  searchCategory === 'films'
+                    ? 'bg-[#0f0f0e] text-white shadow-xs'
+                    : 'bg-[#f6f4ee] hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-[#0f0f0e]/10'
+                }`}
+              >
+                Wedding Cinema ({FILM_ITEMS.length})
+              </button>
+
+              <button
+                onClick={() => setSearchCategory('installations')}
+                className={`text-xs px-3.5 py-1.5 rounded-full font-semibold transition-all cursor-pointer ${
+                  searchCategory === 'installations'
+                    ? 'bg-[#0f0f0e] text-white shadow-xs'
+                    : 'bg-[#f6f4ee] hover:bg-[#b3884c]/15 text-[#0f0f0e] border border-[#0f0f0e]/10'
+                }`}
+              >
+                Installations ({INSTALLATIONS.length})
+              </button>
+
+              {/* Quick Preset Search Chips */}
+              <div className="w-full flex flex-wrap items-center gap-1.5 mt-2 pt-2 border-t border-[#0f0f0e]/6 text-[11px] text-[#757169]">
+                <span>Popular:</span>
+                {['Patna', 'Pheras', 'Mandap', 'Raj Resort', 'Vows', 'Umrao', 'Bodh Gaya'].map((chip) => (
+                  <button
+                    key={chip}
+                    onClick={() => setSearchQuery(chip)}
+                    className="px-2 py-0.5 rounded-md bg-black/5 hover:bg-[#b3884c]/20 hover:text-[#b3884c] transition-colors cursor-pointer font-medium"
+                  >
+                    #{chip}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Results Summary Bar */}
+          <div className="flex items-center justify-between gap-4 mb-6 px-1">
+            <span className="text-xs sm:text-sm font-semibold text-[#0f0f0e]">
+              Showing <span className="text-[#b3884c] font-bold">{totalResultsCount}</span> archival items
+              {searchQuery && (
+                <span>
+                  {' '}
+                  for "<strong className="text-[#0f0f0e]">{searchQuery}</strong>"
+                </span>
+              )}
+            </span>
+
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="text-xs text-[#b3884c] hover:underline cursor-pointer font-medium"
+              >
+                Reset Search
+              </button>
+            )}
+          </div>
+
+          {/* 1. PHOTOGRAPHS RESULTS */}
+          {filteredPhotos.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#0f0f0e]/10">
+                <Layers className="w-4 h-4 text-[#b3884c]" />
+                <h2 className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#0f0f0e]">
+                  Photographic Frames ({filteredPhotos.length})
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredPhotos.map((item) => (
+                  <div
+                    key={item.id}
+                    onClick={() => onSelectPhoto(item)}
+                    className="group bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 hover:border-[#b3884c] transition-all cursor-pointer shadow-xs hover:shadow-lg flex flex-col"
+                  >
+                    <div className="aspect-[4/3] w-full overflow-hidden relative">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3 bg-[#0f0f0e]/75 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                        {item.categoryLabel}
+                      </div>
+                    </div>
+
+                    <div className="p-4 flex-1 flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] font-semibold text-[#b3884c] uppercase tracking-wider block">
+                          {item.location} · {item.year}
+                        </span>
+                        <h3 className="font-['Cormorant_Garamond',serif] text-xl font-bold text-[#0f0f0e] leading-snug mt-1">
+                          {item.title}
+                        </h3>
+                        <span className="font-['Pinyon_Script',cursive] text-base text-[#757169] block mb-1">
+                          {item.couple}
+                        </span>
+                        <p className="text-xs text-[#524e47] line-clamp-2 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+
+                      <div className="mt-3 pt-2.5 border-t border-[#0f0f0e]/8 flex items-center justify-between text-[11px] text-[#757169]">
+                        <span>{item.exif.lens}</span>
+                        <span className="text-[#b3884c] font-semibold group-hover:underline">Open Frame →</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 2. WEDDING CINEMA FILMS RESULTS */}
+          {filteredFilms.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#0f0f0e]/10">
+                <Film className="w-4 h-4 text-[#b3884c]" />
+                <h2 className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#0f0f0e]">
+                  Wedding Cinema Films ({filteredFilms.length})
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {filteredFilms.map((film) => (
+                  <div
+                    key={film.id}
+                    className="bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 shadow-xs hover:shadow-md transition-all flex flex-col"
+                  >
+                    <div className="aspect-[16/9] relative overflow-hidden bg-black">
+                      <img
+                        src={film.thumbnailUrl}
+                        alt={film.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <a
+                        href={film.youtubeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 bg-black/40 hover:bg-black/20 transition-all flex items-center justify-center group"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-[#b3884c] text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                          <Play className="w-5 h-5 fill-current ml-0.5" />
+                        </div>
+                      </a>
+                      <div className="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        {film.duration}
+                      </div>
+                    </div>
+
+                    <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] font-semibold text-[#b3884c] uppercase tracking-wider block">
+                          {film.location}
+                        </span>
+                        <h3 className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#0f0f0e] leading-snug">
+                          {film.title}
+                        </h3>
+                        <span className="font-['Pinyon_Script',cursive] text-lg text-[#757169] block mb-2">
+                          {film.couple}
+                        </span>
+                        <p className="text-xs text-[#524e47] line-clamp-2 leading-relaxed">
+                          {film.synopsis}
+                        </p>
+                      </div>
+
+                      <div className="mt-4 pt-3 border-t border-[#0f0f0e]/8 flex items-center justify-between gap-3">
+                        <button
+                          onClick={() => onOpenEnquiry(`Cinema Film: ${film.title}`)}
+                          className="px-4 py-2 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                        >
+                          Check Date
+                        </button>
+                        <a
+                          href={film.youtubeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-[#b3884c] font-semibold hover:underline flex items-center gap-1"
+                        >
+                          <span>Watch on YouTube</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* 3. INSTALLATIONS RESULTS */}
+          {filteredInstallations.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-2 mb-4 pb-2 border-b border-[#0f0f0e]/10">
+                <Building2 className="w-4 h-4 text-[#b3884c]" />
+                <h2 className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#0f0f0e]">
+                  Grand Installations & Venues ({filteredInstallations.length})
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredInstallations.map((inst) => (
+                  <div
+                    key={inst.id}
+                    className="bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 shadow-xs hover:shadow-lg transition-all flex flex-col"
+                  >
+                    <div className="aspect-[16/11] relative overflow-hidden bg-black/5">
+                      <img
+                        src={inst.imageUrl}
+                        alt={inst.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute top-2.5 left-2.5 bg-[#0f0f0e]/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        {inst.venue}
+                      </div>
+                    </div>
+
+                    <div className="p-4 flex-1 flex flex-col justify-between">
+                      <div>
+                        <span className="text-[10px] text-[#757169] uppercase tracking-wider font-semibold block">
+                          {inst.location}
+                        </span>
+                        <h3 className="font-['Cormorant_Garamond',serif] text-xl font-bold text-[#0f0f0e] leading-snug mt-0.5">
+                          {inst.title}
+                        </h3>
+                        <p className="text-xs text-[#524e47] line-clamp-2 mt-1.5 leading-relaxed italic">
+                          "{inst.atmosphere}"
+                        </p>
+                      </div>
+
+                      <div className="mt-3 pt-3 border-t border-[#0f0f0e]/8 flex items-center justify-between">
+                        <button
+                          onClick={() => onOpenEnquiry(`Installation: ${inst.venue}`)}
+                          className="text-xs font-bold text-[#b3884c] hover:underline cursor-pointer"
+                        >
+                          Inquire Venue Coverage →
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* EMPTY STATE */}
+          {totalResultsCount === 0 && (
+            <div className="bg-white rounded-3xl p-10 sm:p-14 text-center border border-[#0f0f0e]/10 shadow-sm max-w-xl mx-auto my-8">
+              <div className="w-14 h-14 rounded-full bg-[#f6f4ee] flex items-center justify-center mx-auto mb-4 border border-[#0f0f0e]/8">
+                <Search className="w-6 h-6 text-[#757169]" />
+              </div>
+              <h3 className="font-['Cormorant_Garamond',serif] text-2xl font-bold text-[#0f0f0e]">
+                No Archival Frames Found
+              </h3>
+              <p className="text-xs sm:text-sm text-[#757169] mt-2 leading-relaxed">
+                We couldn't find any frames matching "{searchQuery}". Try using broader keywords like "Patna", "Pheras", or explore our full collections.
+              </p>
+
+              <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSearchCategory('all');
+                  }}
+                  className="px-5 py-2.5 rounded-full bg-[#0f0f0e] text-white text-xs font-bold hover:bg-[#b3884c] transition-colors cursor-pointer"
+                >
+                  Clear All Filters
+                </button>
+                <a
+                  href={STUDIO_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full bg-[#25D366]/15 text-[#128C7E] border border-[#25D366]/30 text-xs font-bold hover:bg-[#25D366]/25 transition-colors cursor-pointer flex items-center gap-1.5"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" size={14} />
+                  <span>Ask Studio Directly</span>
+                </a>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -18,7 +18,18 @@ import { DedicatedPages } from './components/DedicatedPages';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { LoadingScreen } from './components/LoadingScreen';
 
-export type PageView = 'home' | 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates' | 'cookies-policy' | 'terms-conditions';
+export type PageView =
+  | 'home'
+  | 'gallery'
+  | 'installations'
+  | 'films'
+  | 'philosophy'
+  | 'services'
+  | 'location'
+  | 'check-dates'
+  | 'search'
+  | 'cookies-policy'
+  | 'terms-conditions';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageView>('home');
@@ -69,8 +80,9 @@ export default function App() {
 
       {/* 1. FLOATING SLEEK HEADER */}
       <Header
-        onOpenEnquiry={() => handleOpenEnquiry()}
-        onOpenSearch={() => setIsSearchOpen(true)}
+        currentPage={currentPage}
+        onOpenEnquiry={() => handleNavigatePage('check-dates')}
+        onOpenSearch={() => handleNavigatePage('search')}
         onNavigatePage={handleNavigatePage}
       />
 
@@ -81,6 +93,7 @@ export default function App() {
           onBackToHome={() => setCurrentPage('home')}
           onSelectPhoto={handleSelectPhoto}
           onOpenEnquiry={handleOpenEnquiry}
+          onNavigatePage={handleNavigatePage}
         />
       ) : (
         <main className="flex-1">
