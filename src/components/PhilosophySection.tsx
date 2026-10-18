@@ -1,5 +1,5 @@
 import React from 'react';
-import { Camera, Heart, Award } from 'lucide-react';
+import { Camera, Heart, ShieldCheck } from 'lucide-react';
 import { StudioLogo } from './StudioLogo';
 
 export const PhilosophySection: React.FC = () => {
@@ -70,7 +70,7 @@ export const PhilosophySection: React.FC = () => {
         <div className="bg-white border border-[#0f0f0e]/10 rounded-2xl p-6 sm:p-9 flex flex-col justify-between hover:border-[#b3884c]/50 transition-colors shadow-sm hover:shadow-md">
           <div>
             <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#f6f4ee] border border-[#b3884c]/30 flex items-center justify-center text-[#b3884c] mb-5 sm:mb-6">
-              <Award className="w-5 h-5" />
+              <ShieldCheck className="w-5 h-5" />
             </div>
             <span className="font-['Pinyon_Script',cursive] text-xl sm:text-2xl text-[#b3884c] block mb-1">
               third principle

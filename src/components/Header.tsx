@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { STUDIO_INFO } from '../data/portfolioData';
-import { Phone, Search, Menu as MenuIcon, X, ArrowUpRight, Layers, Film, Camera, Heart, MapPin, Sparkles } from 'lucide-react';
+import { Phone, Search, Menu as MenuIcon, X, ArrowUpRight, Layers, Film, Camera, Heart, MapPin, Building2 } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { StudioLogo } from './StudioLogo';
 
@@ -276,7 +276,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, onOpenEnquiry, onOp
               }`}
             >
               <span>01. Grand Installations</span>
-              <Sparkles className="w-4 h-4 text-[#b3884c]" />
+              <Building2 className="w-4 h-4 text-[#b3884c]" />
             </button>
             <button
               onClick={() => handleNav('portfolio', 'gallery')}

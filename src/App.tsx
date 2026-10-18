@@ -6,7 +6,6 @@ import { PortfolioGallery } from './components/PortfolioGallery';
 import { LightboxModal } from './components/LightboxModal';
 import { FilmShowcase } from './components/FilmShowcase';
 import { PhilosophySection } from './components/PhilosophySection';
-import { ServicesSection } from './components/ServicesSection';
 import { StudioLocation } from './components/StudioLocation';
 import { Footer } from './components/Footer';
 import { DateEnquiryModal } from './components/DateEnquiryModal';
@@ -111,9 +110,6 @@ export default function App() {
 
           {/* PHILOSOPHY & ART OF MASOOM JAVED */}
           <PhilosophySection />
-
-          {/* CONFIRMED BESPOKE SERVICES */}
-          <ServicesSection onSelectService={(srv) => handleOpenEnquiry(srv)} />
 
           {/* STUDIO LOCATION TOUCHPOINT */}
           <StudioLocation onOpenEnquiry={() => handleOpenEnquiry()} />

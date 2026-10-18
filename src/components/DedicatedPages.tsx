@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   ExternalLink,
   Search,
-  Sparkles,
   Building2,
   Layers,
   Film,
@@ -1071,7 +1070,7 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
 
                     {/* Lighting Scheme Badge */}
                     <div className="mt-4 p-3 rounded-xl bg-[#faf8f5] border border-[#b3884c]/20 flex items-start gap-2 text-xs">
-                      <Sparkles className="w-3.5 h-3.5 text-[#b3884c] shrink-0 mt-0.5" />
+                      <Camera className="w-3.5 h-3.5 text-[#b3884c] shrink-0 mt-0.5" />
                       <div>
                         <span className="font-bold text-[#b3884c] block text-[10.5px] uppercase tracking-wider">Cinema Lighting Setup</span>
                         <span className="text-[#524e47] text-[11.5px] leading-tight block mt-0.5">{inst.lightingProfile}</span>
