@@ -434,7 +434,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
 
   return (
     <section
-      className="relative w-full min-h-[100svh] overflow-hidden bg-[#f6f4ee] text-[#0f0f0e] flex flex-col justify-center items-center md:items-start pt-32 sm:pt-36 md:pt-44 lg:pt-48 pb-12 sm:pb-16 px-4 sm:px-8 md:px-12 lg:px-16 select-none paper-texture scroll-mt-20 md:scroll-mt-36"
+      className="relative w-full min-h-[100svh] overflow-hidden bg-[#f6f4ee] text-[#0f0f0e] flex flex-col justify-center items-center md:items-start pt-24 sm:pt-28 md:pt-44 lg:pt-48 pb-10 sm:pb-16 px-3.5 sm:px-8 md:px-12 lg:px-16 select-none paper-texture scroll-mt-20 md:scroll-mt-36"
       id="hero-stage"
     >
       {/* LUCID GLASS AMBIENT LIGHTS (Desktop Atmosphere) */}
@@ -444,11 +444,11 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
       {/* ══════════════════════════════════════════════════════════════════
           HERO BACKGROUND MOVING PHOTOS ANIMATION
           - Continuous 3-Set Triple Cascade (100% Seamless, Zero Breaking)
-          - Clear, vibrant and unobstructed on smartphone
+          - 100% Vibrant, Clear, and Visible Across Smartphone & Desktop
           - Aligned strictly to the right side on PC / Tablet view
           ══════════════════════════════════════════════════════════════════ */}
       <div
-        className="absolute inset-0 flex justify-center items-start gap-[var(--gap)] overflow-hidden pointer-events-none select-none z-10 opacity-80 sm:opacity-85 md:opacity-100 md:pointer-events-auto md:inset-auto md:top-0 md:bottom-0 md:right-0 md:h-full md:w-[48%] lg:w-[50%] xl:w-[54%] md:justify-end md:pr-4 lg:pr-8 xl:pr-12"
+        className="absolute inset-0 flex justify-center items-start gap-[var(--gap)] overflow-hidden pointer-events-none select-none z-10 opacity-100 md:pointer-events-auto md:inset-auto md:top-0 md:bottom-0 md:right-0 md:h-full md:w-[48%] lg:w-[50%] xl:w-[54%] md:justify-end md:pr-4 lg:pr-8 xl:pr-12"
         style={{
           maskImage: 'var(--mosaic-mask)',
           WebkitMaskImage: 'var(--mosaic-mask)',
@@ -479,26 +479,26 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
 
       {/* ══════════════════════════════════════════════════════════════════
           HERO TYPOGRAPHY & EMOTIONAL NARRATIVE
-          - Completely Transparent Box (No opaque box around text)
-          - "Annual Retrospective · Estd. 2018" between decorated lines (No Logo)
-          - Optimized for Smartphone and Desktop
+          - Smartphone: Transparent Frosted Outline Box covering text & details
+            keeping the moving photo animation fully visible all around.
+          - Desktop: Open luxury layout aligned to the left side.
           ══════════════════════════════════════════════════════════════════ */}
-      <div className="relative z-20 w-full max-w-sm sm:max-w-md mx-auto text-center p-0 flex flex-col items-center justify-center bg-transparent border-none shadow-none md:text-left md:items-start md:mx-0 md:max-w-sm md:lg:max-w-lg lg:max-w-xl xl:max-w-2xl my-auto">
-        {/* Decorated Line with Text - No Logo, Pure Luxury Typography */}
+      <div className="relative z-20 w-auto max-w-[340px] xs:max-w-[365px] sm:max-w-md mx-auto text-center flex flex-col items-center justify-center my-auto p-4 xs:p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#fbf9f5]/78 backdrop-blur-md border border-[#0f0f0e]/12 shadow-[0_8px_32px_rgba(0,0,0,0.07)] md:text-left md:items-start md:mx-0 md:max-w-xl lg:max-w-2xl md:bg-transparent md:backdrop-blur-none md:border-none md:shadow-none md:p-0">
+        {/* Decorated Line with Text - Pure Luxury Typography */}
         <div className="flex items-center justify-center md:justify-start gap-2.5 sm:gap-3.5 mb-2.5 sm:mb-4">
           <span className="w-6 sm:w-10 h-[1.5px] bg-[#b3884c]/70 rounded-full" />
-          <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[10.5px] sm:text-xs font-bold tracking-[0.24em] uppercase text-[#8a652c] whitespace-nowrap">
+          <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[10px] sm:text-xs font-bold tracking-[0.24em] uppercase text-[#8a652c] whitespace-nowrap">
             Annual Retrospective · Estd. 2018
           </span>
           <span className="w-6 sm:w-10 h-[1.5px] bg-[#b3884c]/70 rounded-full" />
         </div>
 
         {/* Emotionally Written Headline */}
-        <h1 className="leading-[1.04] drop-shadow-[0_2px_10px_rgba(255,255,255,0.95)]">
+        <h1 className="leading-[1.04]">
           <span className="block font-['Cormorant_Garamond',serif] font-bold text-2xl sm:text-4xl md:text-5xl lg:text-[62px] xl:text-[68px] text-[#0f0f0e] uppercase tracking-[-0.02em]">
             An archive of light,
           </span>
-          <span className="block font-['Pinyon_Script',cursive] text-3xl sm:text-5xl md:text-6xl lg:text-[74px] xl:text-[80px] text-[#8a652c] normal-case my-1.5 sm:my-2.5 lg:my-3 font-normal drop-shadow-[0_2px_8px_rgba(255,255,255,0.95)] md:pl-2 lg:pl-4">
+          <span className="block font-['Pinyon_Script',cursive] text-3xl sm:text-5xl md:text-6xl lg:text-[74px] xl:text-[80px] text-[#8a652c] normal-case my-1 sm:my-2 lg:my-3 font-normal md:pl-2 lg:pl-4">
             cast in gentle stone
           </span>
           <span className="block font-['Cormorant_Garamond',serif] font-bold text-2xl sm:text-4xl md:text-5xl lg:text-[62px] xl:text-[68px] text-[#0f0f0e] uppercase tracking-[-0.02em]">
@@ -507,15 +507,15 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
         </h1>
 
         {/* Human, Emotional Narrative Prose */}
-        <p className="mt-3 sm:mt-4 text-[12.5px] sm:text-base text-[#1f1d1a] leading-relaxed max-w-xs sm:max-w-md mx-auto md:mx-0 font-medium drop-shadow-[0_1px_6px_rgba(255,255,255,0.9)]">
+        <p className="mt-2.5 sm:mt-4 text-[12px] sm:text-base text-[#1f1d1a] leading-relaxed max-w-xs sm:max-w-md mx-auto md:mx-0 font-medium">
           Masoom Studio archives raw, candid wedding celebrations across Patna and beyond. We give you back the tender glances and unfiltered tears you never wanted to forget.
         </p>
 
         {/* Action CTAs */}
-        <div className="mt-4 sm:mt-6 flex flex-wrap items-center justify-center md:justify-start gap-2.5 sm:gap-3 w-full">
+        <div className="mt-3.5 sm:mt-6 flex flex-wrap items-center justify-center md:justify-start gap-2.5 sm:gap-3 w-full">
           <button
             onClick={onOpenEnquiry}
-            className="h-10 sm:h-12 px-6 sm:px-7 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-md cursor-pointer whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0"
+            className="h-9 sm:h-12 px-5 sm:px-7 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all duration-300 shadow-md cursor-pointer whitespace-nowrap hover:-translate-y-0.5 active:translate-y-0"
           >
             Check Date
           </button>
@@ -523,17 +523,17 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
           <a
             href="#portfolio"
             onClick={scrollToPortfolio}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-white/90 backdrop-blur-xs border border-white/90 text-xs sm:text-sm font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-all cursor-pointer group shadow-xs hover:-translate-y-0.5 active:translate-y-0"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-white/90 backdrop-blur-xs border border-[#0f0f0e]/10 text-xs sm:text-sm font-semibold text-[#0f0f0e] hover:text-[#b3884c] transition-all cursor-pointer group shadow-xs hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Installations</span>
-            <span className="w-5.5 h-5.5 sm:w-6.5 sm:h-6.5 rounded-full bg-[#0f0f0e] text-white inline-flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-xs">
+            <span className="w-5 h-5 sm:w-6.5 sm:h-6.5 rounded-full bg-[#0f0f0e] text-white inline-flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 shadow-xs">
               <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             </span>
           </a>
         </div>
 
         {/* Clean minimal markers */}
-        <div className="mt-4 sm:mt-5 inline-flex items-center justify-center md:justify-start gap-2 sm:gap-4 px-2.5 sm:px-3.5 py-1.5 rounded-full bg-white/85 backdrop-blur-xs border border-white/90 shadow-2xs text-[9.5px] sm:text-xs text-[#45423d] max-w-full">
+        <div className="mt-3.5 sm:mt-5 inline-flex items-center justify-center md:justify-start gap-2 sm:gap-4 px-2.5 sm:px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-xs border border-[#0f0f0e]/10 shadow-2xs text-[9px] sm:text-xs text-[#45423d] max-w-full">
           <div className="flex items-center gap-1">
             <Compass className="w-3.5 h-3.5 text-[#b3884c]" />
             <span>Patna, Bihar</span>

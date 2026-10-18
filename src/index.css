@@ -42,11 +42,11 @@
   /* Smartphone sizing for all 3 columns (Clear, Crisp & Seamless) */
   @media (max-width: 767px) {
     :root {
-      --col: 110px;
+      --col: clamp(102px, 30vw, 116px);
       --gap: 8px;
-      --pitch: 160px;
+      --pitch: 165px;
       --r: 14px;
-      --mosaic-mask: linear-gradient(to bottom, transparent 0%, black 4%, black 96%, transparent 100%);
+      --mosaic-mask: linear-gradient(to bottom, transparent 0%, black 1%, black 99%, transparent 100%);
     }
   }
 
