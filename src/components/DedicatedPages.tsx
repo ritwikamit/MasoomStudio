@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PORTFOLIO_ITEMS, FILM_ITEMS, SERVICES, STUDIO_INFO, PortfolioItem } from '../data/portfolioData';
-import { ArrowLeft, Play, MapPin, Camera, Clock, Check, ArrowRight, Heart, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, Play, MapPin, Camera, Clock, Check, ArrowRight, Heart, CheckCircle2, ExternalLink } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface DedicatedPagesProps {
@@ -16,6 +16,9 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
   onSelectPhoto,
   onOpenEnquiry,
 }) => {
+  // Films Page State
+  const [activeFilmId, setActiveFilmId] = useState<string | null>(null);
+
   // Check Dates Page State
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -151,17 +154,35 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                 key={film.id}
                 className="bg-white rounded-3xl overflow-hidden border border-[#0f0f0e]/10 shadow-sm hover:shadow-md transition-all grid grid-cols-1 lg:grid-cols-2"
               >
-                <div className="aspect-[16/10] relative overflow-hidden group">
-                  <img
-                    src={film.thumbnailUrl}
-                    alt={film.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-white/90 text-[#0f0f0e] flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
-                      <Play className="w-7 h-7 fill-current ml-1" />
+                <div className="aspect-[16/10] relative overflow-hidden bg-black">
+                  {activeFilmId === film.id ? (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${film.youtubeId}?autoplay=1&rel=0`}
+                      title={film.title}
+                      className="w-full h-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <div
+                      onClick={() => setActiveFilmId(film.id)}
+                      className="relative w-full h-full cursor-pointer group"
+                    >
+                      <img
+                        src={film.thumbnailUrl}
+                        alt={film.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/35 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                        <div className="w-16 h-16 rounded-full bg-white/95 text-[#0f0f0e] flex items-center justify-center shadow-lg transition-transform group-hover:scale-110">
+                          <Play className="w-7 h-7 fill-current ml-1" />
+                        </div>
+                      </div>
+                      <div className="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md px-2.5 py-1 rounded text-[11px] text-[#eed8b7] font-semibold border border-white/10">
+                        Watch Cinema Film
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
 
                 <div className="p-6 sm:p-10 flex flex-col justify-between">
@@ -190,13 +211,31 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                     </p>
                   </div>
 
-                  <div className="mt-6 sm:mt-8 pt-6 border-t border-[#0f0f0e]/10 flex flex-wrap gap-3">
+                  <div className="mt-6 sm:mt-8 pt-6 border-t border-[#0f0f0e]/10 flex flex-wrap items-center gap-3">
+                    <button
+                      onClick={() => setActiveFilmId(film.id)}
+                      className="px-5 py-3 bg-[#b3884c] hover:bg-[#8a652c] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center flex items-center justify-center gap-2"
+                    >
+                      <Play className="w-3.5 h-3.5 fill-current" />
+                      <span>{activeFilmId === film.id ? 'Playing' : 'Play Film'}</span>
+                    </button>
+
                     <button
                       onClick={() => onOpenEnquiry(`Cinema Film: ${film.title}`)}
-                      className="w-full sm:w-auto px-6 py-3 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center"
+                      className="px-5 py-3 bg-[#0f0f0e] hover:bg-[#b3884c] text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center"
                     >
                       Check Date for Cinema
                     </button>
+
+                    <a
+                      href={film.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-3 border border-[#0f0f0e]/15 hover:border-[#b3884c] text-[#0f0f0e] rounded-xl text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer text-center flex items-center justify-center gap-1.5 ml-auto"
+                    >
+                      <span>YouTube</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </div>
               </div>

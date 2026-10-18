@@ -20,6 +20,8 @@ export interface PortfolioItem {
 
 export interface FilmItem {
   id: string;
+  youtubeId: string;
+  youtubeUrl: string;
   title: string;
   scriptHighlight: string;
   couple: string;
@@ -293,36 +295,42 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 export const FILM_ITEMS: FilmItem[] = [
   {
     id: "f1",
-    title: "When the River Meets the Sky",
-    scriptHighlight: "eternal melody",
-    couple: "Aanya & Kabir",
-    location: "Patna & Rajgir",
-    duration: "4 min 42 sec",
-    thumbnailUrl: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85",
-    synopsis: "Not just a wedding video, but a love letter. Spoken vows recorded in intimate quiet, scored with acoustic strings and the laughter of their childhood friends.",
-    emotionalHook: "Watch them relive the thunderstorm that broke out just as they completed the final phera, and the laughter that followed."
+    youtubeId: "xtleDC8RPVE",
+    youtubeUrl: "https://youtu.be/xtleDC8RPVE",
+    title: "Kunika & Tushar · Official Wedding Cinema",
+    scriptHighlight: "sacred devotion",
+    couple: "Kunika & Tushar",
+    location: "Raj Resort, Patna",
+    duration: "3 min 12 sec",
+    thumbnailUrl: "https://i.ytimg.com/vi/xtleDC8RPVE/hqdefault.jpg",
+    synopsis: "A breathtaking cinematic teaser capturing vows whispered under chandeliers, soulful shehnai melodies, and the raw emotion of two heritage families becoming one.",
+    emotionalHook: "Masoom Studio's hallmark natural lighting and authentic audio recordings bring back every heartbeat of their big day."
   },
   {
     id: "f2",
-    title: "Letters Written Across Years",
+    youtubeId: "M709arZtyOw",
+    youtubeUrl: "https://youtu.be/M709arZtyOw",
+    title: "Nilesh & Sweta · The Grand Wedding Film",
     scriptHighlight: "gentle homecoming",
-    couple: "Devika & Rohan",
-    location: "Patna Heritage Estate",
-    duration: "6 min 15 sec",
-    thumbnailUrl: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85",
-    synopsis: "Two souls who spent seven years studying across oceans, returning home to the soil of Bihar to place garlands around each other's necks.",
-    emotionalHook: "Their grandfather's voice opens the film, reciting a couplet he wrote for their wedding day."
+    couple: "Nilesh & Sweta",
+    location: "Patna Resort",
+    duration: "4 min 25 sec",
+    thumbnailUrl: "https://i.ytimg.com/vi/M709arZtyOw/hqdefault.jpg",
+    synopsis: "Documentary storytelling celebrating heritage rituals, joyous baraat dhol beats, and an unhurried, intimate exchange of sacred vows.",
+    emotionalHook: "From the silent prayer before the varmala to the celebratory roar of family love, preserved for generations."
   },
   {
     id: "f3",
-    title: "The Fire and the Promise",
-    scriptHighlight: "sacred heartbeat",
-    couple: "Zoya & Farhan",
-    location: "Bailey Road, Patna",
-    duration: "3 min 50 sec",
-    thumbnailUrl: "https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?auto=format&fit=crop&w=1200&q=85",
-    synopsis: "From quiet morning prayers to the electrifying explosion of the baraat, woven together in seamless poetic rhythm.",
-    emotionalHook: "Crafted to make your eyes well with tears and your heart swell with pure joy."
+    youtubeId: "pteeXhDIgTc",
+    youtubeUrl: "https://youtu.be/pteeXhDIgTc",
+    title: "Anupam & Aishwarya · Wedding Teaser Film",
+    scriptHighlight: "eternal rhythm",
+    couple: "Anupam & Aishwarya",
+    location: "Umrao Banquet, Patna",
+    duration: "3 min 40 sec",
+    thumbnailUrl: "https://i.ytimg.com/vi/pteeXhDIgTc/hqdefault.jpg",
+    synopsis: "An emotional tapestry woven with golden varmalas, stolen glances across the mandap, and a tearful yet joyous vidaai blessing.",
+    emotionalHook: "Real vows, organic emotions, and cinematic grade color science created by Masoom Studio."
   }
 ];
 
