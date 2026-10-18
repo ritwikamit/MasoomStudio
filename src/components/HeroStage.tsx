@@ -248,6 +248,126 @@ const SIGNATURE_HERO_ITEMS: PortfolioItem[] = [
     description: "Sunset spilling amber light across the hills as vows are spoken softly.",
     emotionalExcerpt: "Nature provided the cathedral; Masoom Studio provided the eye.",
     exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/640s · f/1.6 · ISO 160" }
+  },
+  {
+    id: "sig-17",
+    title: "The Sacred Mirror",
+    scriptHighlight: "mirror ritual",
+    category: "portraits",
+    categoryLabel: "Bridal Adornment",
+    couple: "Natasha & Kabir",
+    location: "Patna Courtyard",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_12_503579484_1821987428343796_4517332579793077509_n.jpg",
+    aspect: "portrait",
+    description: "Looking into the heritage mirror as the final tikka is set into place.",
+    emotionalExcerpt: "A breath caught in quiet wonder.",
+    exif: { lens: "50mm f/1.2 GM", camera: "Sony A7IV", setting: "1/320s · f/1.8 · ISO 320" }
+  },
+  {
+    id: "sig-18",
+    title: "Scent of Jasmine",
+    scriptHighlight: "gajra grace",
+    category: "candid",
+    categoryLabel: "Fragrant Moments",
+    couple: "Trisha & Varun",
+    location: "Patna Garden Pavilion",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_23_629689692_18395308570199373_6463516980763330862_n.jpg",
+    aspect: "portrait",
+    description: "The delicate intertwining of fresh mogra in hair, smiling amidst festive bustle.",
+    emotionalExcerpt: "Tradition worn with effortless modern grace.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/500s · f/1.4 · ISO 200" }
+  },
+  {
+    id: "sig-19",
+    title: "The Joyful Sangeet",
+    scriptHighlight: "sangeet night",
+    category: "candid",
+    categoryLabel: "Dance & Celebration",
+    couple: "Priyanka & Aman",
+    location: "Heritage Ballroom",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_35_669741192_18081443231096974_4137129828872593350_n.jpg",
+    aspect: "portrait",
+    description: "Twirling lehngas and spirited footwork under festive marquee lights.",
+    emotionalExcerpt: "Unrestrained celebration that made the entire hall join in.",
+    exif: { lens: "24-70mm f/2.8 GM", camera: "Sony A7IV", setting: "1/400s · f/2.8 · ISO 1600" }
+  },
+  {
+    id: "sig-20",
+    title: "The Sacred Kalash",
+    scriptHighlight: "auspicious kalash",
+    category: "weddings",
+    categoryLabel: "Sacred Ritual",
+    couple: "Deepika & Ranveer",
+    location: "Patna River Mandap",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_39_615023029_17949440985160466_7521068306993776435_n.jpg",
+    aspect: "portrait",
+    description: "Offering water and sacred grains as ancestral blessings are invoked.",
+    emotionalExcerpt: "Ancient hymns carried softly across the evening breeze.",
+    exif: { lens: "35mm f/1.4 GM", camera: "Sony A7IV", setting: "1/640s · f/1.8 · ISO 250" }
+  },
+  {
+    id: "sig-21",
+    title: "Gentle Blessings",
+    scriptHighlight: "elders touch",
+    category: "weddings",
+    categoryLabel: "Sacred Touch",
+    couple: "Swati & Gautam",
+    location: "Ancestral Courtyard",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_41_615236824_17949183573160466_1779332980666144285_n.jpg",
+    aspect: "portrait",
+    description: "A gentle hand placed upon the bride's head, conveying decades of quiet love.",
+    emotionalExcerpt: "Words were unnecessary; the touch said everything.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/320s · f/1.4 · ISO 400" }
+  },
+  {
+    id: "sig-22",
+    title: "Tears of Gratitude",
+    scriptHighlight: "vidaai memory",
+    category: "candid",
+    categoryLabel: "Vidaai Memory",
+    couple: "Bhavna & Samarth",
+    location: "Patna Estate",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_48_792909935_17989635174160466_3286981417954613676_n.jpg",
+    aspect: "portrait",
+    description: "Holding mother close before stepping into the decorated car.",
+    emotionalExcerpt: "A tear fell onto the silk pallu, preserved forever in time.",
+    exif: { lens: "50mm f/1.2 GM", camera: "Sony A7IV", setting: "1/250s · f/1.4 · ISO 640" }
+  },
+  {
+    id: "sig-23",
+    title: "The Regal Sherwani",
+    scriptHighlight: "royal groom",
+    category: "portraits",
+    categoryLabel: "Groom Portrait",
+    couple: "Raghav & Sakshi",
+    location: "Heritage Archway",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_9_825324190_18634205986009933_6617488119082731688_n.jpg",
+    aspect: "portrait",
+    description: "Handcrafted chikankari embroidery and jeweled kalgi standing tall in natural afternoon light.",
+    emotionalExcerpt: "Poised, regal, and ready to welcome his bride.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/800s · f/1.6 · ISO 100" }
+  },
+  {
+    id: "sig-24",
+    title: "Eternal Union",
+    scriptHighlight: "sacred agni",
+    category: "weddings",
+    categoryLabel: "Sacred Agni",
+    couple: "Tanvi & Rishabh",
+    location: "Patna Riverbank Mandap",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_40_653406047_18099443923751734_1855867616202251122_n.jpg",
+    aspect: "portrait",
+    description: "Holding hands over sacred embers as the seven vows are completed.",
+    emotionalExcerpt: "Two lives intertwined in holy matrimony for generations to come.",
+    exif: { lens: "35mm f/1.4 GM", camera: "Sony A7IV", setting: "1/400s · f/1.8 · ISO 800" }
   }
 ];
 
@@ -260,99 +380,44 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
     }
   };
 
-  // Curated 6 items per column populated solely with authentic SignatureImage photos
-  const COL_X1_ITEMS = [
-    { type: 'quote' as const, kicker: 'Sacred Pheras', quote: 'When fire bears witness to quiet forever.', script: 'Masoom Studio' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[9] },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[10] },
-    { type: 'quote' as const, kicker: 'Estd. 2018', quote: 'Preserving quiet heritage rituals.', script: 'Patna, Bihar' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[11] },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[12] },
-  ];
-
-  const COL_C1_ITEMS = [
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[0] },
-    { type: 'quote' as const, kicker: 'The Sacred Vow', quote: 'More than a photograph. A memory you return to.', sub: 'Patna, Bihar' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[1] },
-    { type: 'quote' as const, kicker: 'Unprompted Love', quote: 'The glances you will cherish forever.', script: 'natural light' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[2] },
-    { type: 'quote' as const, kicker: 'Quiet Tears', quote: 'Sacred ceremonies honored with devotion.', script: 'truthful tones' },
-  ];
-
-  const COL_C2_ITEMS = [
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[3] },
-    { type: 'quote' as const, kicker: 'Archival Heart', quote: 'Crafted for Generations to Hold.', script: 'heirlooms' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[4] },
-    { type: 'quote' as const, kicker: 'Documentary Truth', quote: 'Unscripted tears, joyful blessings.', script: 'authentic vows' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[5] },
-    { type: 'quote' as const, kicker: 'Timeless Archiving', quote: '4K cinema masters and fine-art cotton.', script: 'centuries' },
-  ];
-
-  const COL_C3_ITEMS = [
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[6] },
-    { type: 'quote' as const, kicker: 'Pure Empathy', quote: 'We watch for the tears you never saw.', sub: 'Estd. 2018' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[7] },
-    { type: 'quote' as const, kicker: 'Heirloom Books', quote: 'Museum-grade cotton and linen bindings.', script: '50-year archive' },
-    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[8] },
-    { type: 'quote' as const, kicker: 'Vow Stories', quote: 'Natural light and honest Indian skin tones.', script: 'hand-calibrated' },
-  ];
+  // Every column is filled solely with distinct photos from the SignatureImage folder (Zero duplicate images)
+  const COL_C1_ITEMS = SIGNATURE_HERO_ITEMS.slice(0, 6);
+  const COL_C2_ITEMS = SIGNATURE_HERO_ITEMS.slice(6, 12);
+  const COL_C3_ITEMS = SIGNATURE_HERO_ITEMS.slice(12, 18);
+  const COL_X1_ITEMS = SIGNATURE_HERO_ITEMS.slice(18, 24);
 
   // Reusable card renderer with strict border containment and alignment
-  const renderCard = (
-    type: 'img' | 'quote',
-    data: { item?: PortfolioItem; kicker?: string; quote?: string; script?: string; sub?: string },
-    keySuffix: string
-  ) => {
-    if (type === 'img' && data.item) {
-      const itm = data.item;
-      return (
-        <div
-          key={`${itm.id}-${keySuffix}`}
-          onClick={() => onSelectPhoto(itm)}
-          className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] overflow-hidden relative group cursor-pointer shrink-0 border border-[#0f0f0e]/12 shadow-sm bg-[#eae5dc] isolate [transform:translateZ(0)] select-none hover:border-[#b3884c]/60 transition-colors"
-        >
-          <img
-            src={itm.imageUrl}
-            alt={itm.title}
-            className="block w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 p-2.5 sm:p-3 flex flex-col justify-end pointer-events-none">
-            <span className="text-[10px] sm:text-[11px] font-semibold text-white tracking-wide truncate">{itm.title}</span>
-            <span className="font-['Pinyon_Script',cursive] text-xs sm:text-sm text-[#e6cfab] truncate">{itm.couple}</span>
-          </div>
-        </div>
-      );
-    }
-
+  const renderCard = (itm: PortfolioItem, keySuffix: string) => {
     return (
       <div
-        key={`quote-${data.kicker}-${keySuffix}`}
-        className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] backdrop-blur-md bg-white/95 border border-[#0f0f0e]/10 p-2.5 sm:p-4 flex flex-col justify-between shrink-0 shadow-sm overflow-hidden select-none"
+        key={`${itm.id}-${keySuffix}`}
+        onClick={() => onSelectPhoto(itm)}
+        className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] overflow-hidden relative group cursor-pointer shrink-0 border border-[#0f0f0e]/12 shadow-sm bg-[#eae5dc] isolate [transform:translateZ(0)] select-none hover:border-[#b3884c]/60 transition-colors"
       >
-        <span className="text-[7.5px] sm:text-[9.5px] tracking-widest uppercase font-semibold text-[#b3884c] truncate">
-          {data.kicker}
-        </span>
-        <p className="font-['Cormorant_Garamond',serif] text-[10.5px] sm:text-base text-[#141210] italic leading-snug line-clamp-3">
-          "{data.quote}"
-        </p>
-        <span className="font-['Pinyon_Script',cursive] text-xs sm:text-base text-[#8a652c] truncate">
-          {data.script || data.sub || 'Masoom Studio'}
-        </span>
+        <img
+          src={itm.imageUrl}
+          alt={itm.title}
+          className="block w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+          loading="eager"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 p-2.5 sm:p-3 flex flex-col justify-end pointer-events-none">
+          <span className="text-[10px] sm:text-[11px] font-semibold text-white tracking-wide truncate">{itm.title}</span>
+          <span className="font-['Pinyon_Script',cursive] text-xs sm:text-sm text-[#e6cfab] truncate">{itm.couple}</span>
+        </div>
       </div>
     );
   };
 
-  const renderColumnSets = (items: Array<{ type: 'img' | 'quote'; [key: string]: any }>, colPrefix: string) => {
+  const renderColumnSets = (items: PortfolioItem[], colPrefix: string) => {
     return (
       <>
         {/* Set A */}
-        {items.map((entry, idx) => renderCard(entry.type, entry, `${colPrefix}-a-${idx}`))}
+        {items.map((item, idx) => renderCard(item, `${colPrefix}-a-${idx}`))}
         {/* Set B */}
-        {items.map((entry, idx) => renderCard(entry.type, entry, `${colPrefix}-b-${idx}`))}
+        {items.map((item, idx) => renderCard(item, `${colPrefix}-b-${idx}`))}
         {/* Set C (guarantees continuous coverage across any screen without breaking) */}
-        {items.map((entry, idx) => renderCard(entry.type, entry, `${colPrefix}-c-${idx}`))}
+        {items.map((item, idx) => renderCard(item, `${colPrefix}-c-${idx}`))}
       </>
     );
   };
