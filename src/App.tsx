@@ -16,6 +16,7 @@ import { ScrollProgressButton } from './components/ScrollProgressButton';
 import { CookieBanner } from './components/CookieBanner';
 import { DedicatedPages } from './components/DedicatedPages';
 import { MobileBottomNav } from './components/MobileBottomNav';
+import { LoadingScreen } from './components/LoadingScreen';
 
 export type PageView = 'home' | 'gallery' | 'films' | 'philosophy' | 'services' | 'location' | 'check-dates' | 'cookies-policy' | 'terms-conditions';
 
@@ -63,6 +64,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#f6f4ee] text-[#0f0f0e] flex flex-col relative selection:bg-[#b3884c]/25 selection:text-[#0f0f0e] pb-16 md:pb-0">
+      {/* 0. BRAND LUXURY LOADING SCREEN */}
+      <LoadingScreen />
+
       {/* 1. FLOATING SLEEK HEADER */}
       <Header
         onOpenEnquiry={() => handleOpenEnquiry()}
