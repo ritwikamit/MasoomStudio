@@ -43,7 +43,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectPhot
         </div>
 
         {[
-          { key: 'all', label: 'All Celebrations (8)' },
+          { key: 'all', label: `All Celebrations (${PORTFOLIO_ITEMS.length})` },
           { key: 'weddings', label: 'Royal Pheras & Vows' },
           { key: 'pre-wedding', label: 'Quiet Pre-Wedding Solitude' },
           { key: 'portraits', label: 'Bridal Heirlooms' },

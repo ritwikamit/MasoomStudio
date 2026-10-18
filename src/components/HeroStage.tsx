@@ -401,9 +401,19 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
           loading="eager"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 p-2.5 sm:p-3 flex flex-col justify-end pointer-events-none">
-          <span className="text-[10px] sm:text-[11px] font-semibold text-white tracking-wide truncate">{itm.title}</span>
-          <span className="font-['Pinyon_Script',cursive] text-xs sm:text-sm text-[#e6cfab] truncate">{itm.couple}</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/15 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 p-2.5 sm:p-3.5 flex flex-col justify-end pointer-events-none text-left">
+          <span className="text-[8px] sm:text-[9px] uppercase tracking-wider text-[#eed8b7] font-bold block mb-0.5">
+            {itm.categoryLabel}
+          </span>
+          <span className="text-[10.5px] sm:text-[11.5px] font-bold text-white tracking-tight leading-snug line-clamp-1">
+            {itm.title}
+          </span>
+          <p className="text-[8.5px] sm:text-[9.5px] text-white/90 leading-snug mt-1 line-clamp-2 font-normal">
+            {itm.description}
+          </p>
+          <span className="font-['Pinyon_Script',cursive] text-[11px] sm:text-xs text-[#eed8b7] block mt-0.5 truncate">
+            {itm.couple} · {itm.location}
+          </span>
         </div>
       </div>
     );
