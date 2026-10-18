@@ -483,14 +483,20 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
             keeping the moving photo animation fully visible all around.
           - Desktop: Open luxury layout aligned to the left side.
           ══════════════════════════════════════════════════════════════════ */}
-      <div className="relative z-20 w-auto max-w-[340px] xs:max-w-[365px] sm:max-w-md mx-auto text-center flex flex-col items-center justify-center my-auto p-4 xs:p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-[#fbf9f5]/78 backdrop-blur-md border border-[#0f0f0e]/12 shadow-[0_8px_32px_rgba(0,0,0,0.07)] md:text-left md:items-start md:mx-0 md:max-w-xl lg:max-w-2xl md:bg-transparent md:backdrop-blur-none md:border-none md:shadow-none md:p-0">
-        {/* Decorated Line with Text - Pure Luxury Typography */}
-        <div className="flex items-center justify-center md:justify-start gap-2.5 sm:gap-3.5 mb-2.5 sm:mb-4">
-          <span className="w-6 sm:w-10 h-[1.5px] bg-[#b3884c]/70 rounded-full" />
-          <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[10px] sm:text-xs font-bold tracking-[0.24em] uppercase text-[#8a652c] whitespace-nowrap">
+      <div className="relative z-20 w-auto max-w-[340px] xs:max-w-[365px] sm:max-w-md mx-auto text-center flex flex-col items-center justify-center my-auto p-4 xs:p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/30 backdrop-blur-md border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.06)] md:text-left md:items-start md:mx-0 md:max-w-xl lg:max-w-2xl md:bg-transparent md:backdrop-blur-none md:border-none md:shadow-none md:p-0">
+        {/* Decorated Line with Sharp Pointed Ends - Luxury Typography in All Views */}
+        <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 mb-2.5 sm:mb-4">
+          {/* Left Sharp Pointed Line */}
+          <svg className="w-7 sm:w-12 h-2 shrink-0" viewBox="0 0 50 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="0,3 12,1 50,2 50,4 12,5" fill="#b3884c" />
+          </svg>
+          <span className="font-['Plus_Jakarta_Sans',sans-serif] text-[10px] sm:text-xs font-bold tracking-[0.22em] uppercase text-[#8a652c] whitespace-nowrap">
             Annual Retrospective · Estd. 2018
           </span>
-          <span className="w-6 sm:w-10 h-[1.5px] bg-[#b3884c]/70 rounded-full" />
+          {/* Right Sharp Pointed Line */}
+          <svg className="w-7 sm:w-12 h-2 shrink-0" viewBox="0 0 50 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="0,2 38,1 50,3 38,5 0,4" fill="#b3884c" />
+          </svg>
         </div>
 
         {/* Emotionally Written Headline */}

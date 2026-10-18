@@ -90,7 +90,7 @@ export default function App() {
           <PortfolioGallery onSelectPhoto={handleSelectPhoto} />
 
           {/* CINEMATIC WEDDING CINEMA SHOWCASE */}
-          <FilmShowcase />
+          <FilmShowcase onOpenFilmsPage={() => handleNavigatePage('films')} />
 
           {/* PHILOSOPHY & ART OF MASOOM JAVED */}
           <PhilosophySection />

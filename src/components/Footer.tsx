@@ -1,6 +1,6 @@
 import React from 'react';
 import { STUDIO_INFO } from '../data/portfolioData';
-import { ArrowUp, Phone, Mail } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { StudioLogo } from './StudioLogo';
 
@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
             <div className="mt-5 flex flex-wrap gap-2">
               <a
                 href={STUDIO_INFO.phonePrimaryUrl}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#faf8f5] hover:bg-[#b3884c] text-[#0f0f0e] hover:text-white transition-all text-xs font-semibold border border-[#0f0f0e]/8"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#faf8f5] hover:bg-[#b3884c] text-[#0f0f0e] hover:text-white transition-all text-xs font-semibold border border-[#0f0f0e]/8 shadow-2xs"
                 title="Direct call to Masoom Studio: +91 7488458213"
               >
                 <Phone className="w-3 h-3 text-[#b3884c]" />
@@ -67,20 +67,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
                 href={STUDIO_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366] text-[#128C7E] hover:text-white transition-all text-xs font-medium border border-[#25D366]/20"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#25D366]/10 hover:bg-[#25D366] text-[#128C7E] hover:text-white transition-all text-xs font-medium border border-[#25D366]/20 shadow-2xs"
                 title="Chat directly on WhatsApp"
               >
                 <WhatsAppIcon className="w-3.5 h-3.5 text-[#25D366]" size={14} />
                 <span>WhatsApp</span>
-              </a>
-
-              <a
-                href={STUDIO_INFO.emailUrl}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#faf8f5] hover:bg-[#0f0f0e] text-[#0f0f0e] hover:text-white transition-all text-xs font-medium border border-[#0f0f0e]/8"
-                title="Send an email"
-              >
-                <Mail className="w-3 h-3 text-[#b3884c]" />
-                <span>Email</span>
               </a>
             </div>
           </div>
@@ -241,15 +232,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenPrivacy, onOpenEnquiry, on
               className="hover:text-[#b3884c] transition-colors cursor-pointer"
             >
               Privacy Policy
-            </button>
-            <span className="hidden sm:inline text-[#0f0f0e]/20" aria-hidden="true">·</span>
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#faf8f5] hover:bg-[#0f0f0e] text-[#0f0f0e] hover:text-white border border-[#0f0f0e]/10 transition-all text-xs font-semibold cursor-pointer group"
-              aria-label="Scroll to top of page"
-            >
-              <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5 text-[#b3884c] group-hover:text-white transition-colors" />
             </button>
           </div>
         </div>

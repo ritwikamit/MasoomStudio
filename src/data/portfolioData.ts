@@ -308,6 +308,19 @@ export const FILM_ITEMS: FilmItem[] = [
   },
   {
     id: "f2",
+    youtubeId: "UeQFBfAzaRw",
+    youtubeUrl: "https://youtu.be/UeQFBfAzaRw",
+    title: "Tushar & Sonali · The Royal Wedding Film",
+    scriptHighlight: "royal heritage",
+    couple: "Tushar & Sonali",
+    location: "Raj Resort, Patna",
+    duration: "5 min 18 sec",
+    thumbnailUrl: "https://i.ytimg.com/vi/UeQFBfAzaRw/hqdefault.jpg",
+    synopsis: "A regal wedding documentary celebrating sacred pheras, joyous garland exchanges, and grand heritage courtyard festivities under evening starlight.",
+    emotionalHook: "Unfiltered smiles, timeless rituals, and bespoke color grading preserving true family happiness."
+  },
+  {
+    id: "f3",
     youtubeId: "M709arZtyOw",
     youtubeUrl: "https://youtu.be/M709arZtyOw",
     title: "Nilesh & Sweta · The Grand Wedding Film",
@@ -320,7 +333,7 @@ export const FILM_ITEMS: FilmItem[] = [
     emotionalHook: "From the silent prayer before the varmala to the celebratory roar of family love, preserved for generations."
   },
   {
-    id: "f3",
+    id: "f4",
     youtubeId: "pteeXhDIgTc",
     youtubeUrl: "https://youtu.be/pteeXhDIgTc",
     title: "Anupam & Aishwarya · Wedding Teaser Film",
@@ -331,6 +344,32 @@ export const FILM_ITEMS: FilmItem[] = [
     thumbnailUrl: "https://i.ytimg.com/vi/pteeXhDIgTc/hqdefault.jpg",
     synopsis: "An emotional tapestry woven with golden varmalas, stolen glances across the mandap, and a tearful yet joyous vidaai blessing.",
     emotionalHook: "Real vows, organic emotions, and cinematic grade color science created by Masoom Studio."
+  },
+  {
+    id: "f5",
+    youtubeId: "XUoFFjSiOR8",
+    youtubeUrl: "https://youtu.be/XUoFFjSiOR8",
+    title: "Atish & Nisha · Engagement Teaser Cinema",
+    scriptHighlight: "candid beginnings",
+    couple: "Atish & Nisha",
+    location: "Raj Resort, Patna",
+    duration: "2 min 55 sec",
+    thumbnailUrl: "https://i.ytimg.com/vi/XUoFFjSiOR8/hqdefault.jpg",
+    synopsis: "The joyful prelude to forever. Ring exchanges, lively musical family performances, and sparkling candid laughter under ambient chandeliers.",
+    emotionalHook: "Capturing the electric chemistry and anticipation of two hearts beginning their lifelong adventure."
+  },
+  {
+    id: "f6",
+    youtubeId: "gJt3uuc2_eU",
+    youtubeUrl: "https://youtu.be/gJt3uuc2_eU",
+    title: "Prince & Sonali · Cinematic Wedding Film",
+    scriptHighlight: "sacred vows",
+    couple: "Prince & Sonali",
+    location: "Raj Resort, Patna",
+    duration: "4 min 50 sec",
+    thumbnailUrl: "https://i.ytimg.com/vi/gJt3uuc2_eU/hqdefault.jpg",
+    synopsis: "A magnificent visual poem featuring vibrant haldi hues, heartfelt blessings by elder matriarchs, and tender seven pheras by the holy fire.",
+    emotionalHook: "Every unspoken tear of the vidaai and every ecstatic burst of music captured in pristine clarity."
   }
 ];
 

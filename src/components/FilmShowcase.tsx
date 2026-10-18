@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { FILM_ITEMS, FilmItem } from '../data/portfolioData';
 import { Play, X, Film, Clock, MapPin, Maximize2, ExternalLink } from 'lucide-react';
 
-export const FilmShowcase: React.FC = () => {
+interface FilmShowcaseProps {
+  onOpenFilmsPage?: () => void;
+}
+
+export const FilmShowcase: React.FC<FilmShowcaseProps> = ({ onOpenFilmsPage }) => {
   const [selectedFilm, setSelectedFilm] = useState<FilmItem | null>(null);
   const [activeInlineId, setActiveInlineId] = useState<string | null>(null);
+  const featuredFilms = FILM_ITEMS.slice(0, 3);
 
   return (
     <section id="films" className="py-16 sm:py-24 px-3 sm:px-6 md:px-12 bg-[#faf7f2] border-y border-[#0f0f0e]/8 scroll-mt-24">
@@ -31,7 +36,7 @@ export const FilmShowcase: React.FC = () => {
 
         {/* Film Cards - Light Luxury Theme with Direct YouTube Embeds */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {FILM_ITEMS.map((film) => (
+          {featuredFilms.map((film) => (
             <div
               key={film.id}
               className="group bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 hover:border-[#b3884c]/60 transition-all duration-300 flex flex-col shadow-sm hover:shadow-xl"
@@ -150,6 +155,19 @@ export const FilmShowcase: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Explore All 6 Films CTA */}
+        {onOpenFilmsPage && (
+          <div className="mt-12 sm:mt-14 text-center">
+            <button
+              onClick={onOpenFilmsPage}
+              className="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full bg-[#0f0f0e] hover:bg-[#b3884c] text-white text-xs sm:text-sm font-bold tracking-wide transition-all shadow-md cursor-pointer hover:-translate-y-0.5 active:translate-y-0"
+            >
+              <Film className="w-4 h-4 text-[#eed8b7]" />
+              <span>Explore All 6 Wedding Films in Cinema Archive</span>
+            </button>
+          </div>
+        )}
       </div>
 
       {/* THEATRE PREVIEW MODAL WITH EMBEDDED YOUTUBE PLAYER */}
