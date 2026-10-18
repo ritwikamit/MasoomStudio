@@ -397,7 +397,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
         <img
           src={itm.imageUrl}
           alt={itm.title}
-          className="block w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 pointer-events-none"
+          className="block w-full h-full object-cover object-[center_18%] transition-transform duration-700 group-hover:scale-105 pointer-events-none"
           loading={isEager ? "eager" : "lazy"}
           decoding="async"
         />

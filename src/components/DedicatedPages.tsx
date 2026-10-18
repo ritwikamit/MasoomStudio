@@ -51,6 +51,7 @@ export interface InstallationItem {
   atmosphere: string;
   highlights: string[];
   lightingProfile: string;
+  imagePosition?: string;
 }
 
 export const INSTALLATIONS: InstallationItem[] = [
@@ -64,6 +65,7 @@ export const INSTALLATIONS: InstallationItem[] = [
     atmosphere: 'A seamless synthesis of European conservatory aesthetics and timeless Magadh regal florals.',
     highlights: ['12-Foot Tuberose Rain Curtain', 'Golden Tungsten Chandeliers', 'Mirror Glass Reflective Aisle', 'White Orchids & Marigold Cascades'],
     lightingProfile: '2800K warm filament tungsten + balanced soft diffuse fill for 4K cinema cameras',
+    imagePosition: 'object-[center_18%]',
   },
   {
     id: 'inst-2',
@@ -75,6 +77,7 @@ export const INSTALLATIONS: InstallationItem[] = [
     atmosphere: 'Designed to evoke the solemn stillness of 18th-century court weddings with deep crimson and pure brass warmth.',
     highlights: ['Over 2,000 Live Brass Diyas', 'Carved Jali Archway Pillars', 'Hand-Dyed Crimson Velvet Drapes', 'Mogra Floral Garlands'],
     lightingProfile: 'Natural havan flame reflections with subtle key fill to preserve the sacred glow',
+    imagePosition: 'object-[center_10%]',
   },
   {
     id: 'inst-3',
@@ -86,6 +89,7 @@ export const INSTALLATIONS: InstallationItem[] = [
     atmosphere: 'Earthy, meditative elegance honoring ancient architectural proportions and tranquil calm under open sky.',
     highlights: ['Carved Sandstone Archway Motif', 'Organic Terracotta Diyas', 'Earthy Lotus Ponds', 'Unbleached Cotton Linen Draping'],
     lightingProfile: 'Golden hour sunset transition with natural amber rim-light',
+    imagePosition: 'object-[center_12%]',
   },
   {
     id: 'inst-4',
@@ -97,6 +101,7 @@ export const INSTALLATIONS: InstallationItem[] = [
     atmosphere: 'Panoramic celebration as the sacred Ganga carries the evening aarti breeze, framed by minimalist floral pillars.',
     highlights: ['Open-Sky Mandap Canopy', 'Riverside Mirror Pools', 'Live Shehnai Acoustic Deck', 'Ivory Georgette Billows'],
     lightingProfile: 'Blue twilight sky contrast with warm 3000K mandap spotlighting',
+    imagePosition: 'object-[center_12%]',
   },
   {
     id: 'inst-5',
@@ -108,6 +113,7 @@ export const INSTALLATIONS: InstallationItem[] = [
     atmosphere: 'Unapologetic royal grandeur tailored for multi-day heirloom festivities with expansive family gatherings.',
     highlights: ['Cascading White Jasmine Arches', 'Vintage Belgian Glass Lanterns', 'Mirrored Walkway Path', 'Handcrafted Throne Seating'],
     lightingProfile: 'Evenly balanced high-CRI cinema lighting for 10-bit color-accurate fabrics',
+    imagePosition: 'object-[center_top]',
   },
   {
     id: 'inst-6',
@@ -119,6 +125,7 @@ export const INSTALLATIONS: InstallationItem[] = [
     atmosphere: 'Electric high-energy revelry wrapped in refined architectural stage design and concert-grade acoustics.',
     highlights: ['Cascading Fairy Light Waterfall', 'Kinetic Tube Lighting Arrays', 'Elevated Live Brass & Dhol Deck', 'Custom Monogram Backdrops'],
     lightingProfile: 'Synchronized concert fixtures tuned for 120fps high-speed cinematic slow-motion',
+    imagePosition: 'object-[center_15%]',
   },
 ];
 
@@ -288,11 +295,11 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                 onClick={() => onSelectPhoto(item)}
                 className="group bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 hover:border-[#b3884c] transition-all cursor-pointer shadow-sm hover:shadow-lg flex flex-col"
               >
-                <div className="aspect-[4/3] w-full overflow-hidden relative">
+                <div className="aspect-[4/3] w-full overflow-hidden relative bg-[#eae5dc]">
                   <img
                     src={item.imageUrl}
                     alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
                     <span className="text-xs text-white font-medium">{item.categoryLabel}</span>
@@ -1016,12 +1023,14 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                 key={inst.id}
                 className="bg-white rounded-3xl overflow-hidden border border-[#0f0f0e]/10 shadow-sm hover:shadow-xl transition-all flex flex-col group"
               >
-                {/* Visual Imagery */}
-                <div className="aspect-[16/11] relative overflow-hidden bg-black/5">
+                {/* Visual Imagery - aspect-[4/5] and calibrated object-position preserves full faces */}
+                <div className="aspect-[4/5] sm:aspect-[3/4] relative overflow-hidden bg-[#eae5dc]">
                   <img
                     src={inst.imageUrl}
                     alt={inst.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                      inst.imagePosition || 'object-[center_15%]'
+                    }`}
                   />
                   <div className="absolute top-3 left-3 bg-[#0f0f0e]/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-white/15">
                     {inst.season}
@@ -1253,11 +1262,11 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                     onClick={() => onSelectPhoto(item)}
                     className="group bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 hover:border-[#b3884c] transition-all cursor-pointer shadow-xs hover:shadow-lg flex flex-col"
                   >
-                    <div className="aspect-[4/3] w-full overflow-hidden relative">
+                    <div className="aspect-[4/3] w-full overflow-hidden relative bg-[#eae5dc]">
                       <img
                         src={item.imageUrl}
                         alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
                       />
                       <div className="absolute top-3 left-3 bg-[#0f0f0e]/75 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
                         {item.categoryLabel}
@@ -1384,11 +1393,13 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                     key={inst.id}
                     className="bg-white rounded-2xl overflow-hidden border border-[#0f0f0e]/10 shadow-xs hover:shadow-lg transition-all flex flex-col"
                   >
-                    <div className="aspect-[16/11] relative overflow-hidden bg-black/5">
+                    <div className="aspect-[4/5] sm:aspect-[3/4] relative overflow-hidden bg-[#eae5dc]">
                       <img
                         src={inst.imageUrl}
                         alt={inst.title}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${
+                          inst.imagePosition || 'object-[center_15%]'
+                        }`}
                       />
                       <div className="absolute top-2.5 left-2.5 bg-[#0f0f0e]/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">
                         {inst.venue}

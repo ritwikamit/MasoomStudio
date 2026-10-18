@@ -80,7 +80,7 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectPhot
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
 

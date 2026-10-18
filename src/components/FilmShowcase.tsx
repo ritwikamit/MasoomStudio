@@ -60,7 +60,7 @@ export const FilmShowcase: React.FC<FilmShowcaseProps> = ({ onOpenFilmsPage }) =
                     <img
                       src={film.thumbnailUrl}
                       alt={film.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover/thumb:scale-105"
+                      className="w-full h-full object-cover object-[center_25%] transition-transform duration-700 group-hover/thumb:scale-105"
                       loading="lazy"
                     />
                     <div className="absolute inset-0 bg-black/40 group-hover/thumb:bg-black/25 transition-colors" />

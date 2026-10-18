@@ -71,7 +71,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
               <img
                 src={item.imageUrl}
                 alt={item.title}
-                className="w-14 h-14 rounded-lg object-cover border border-[#0f0f0e]/10 shrink-0"
+                className="w-14 h-14 rounded-lg object-cover object-[center_20%] border border-[#0f0f0e]/10 shrink-0"
               />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 text-[11px] text-[#b3884c] font-medium">
