@@ -16,6 +16,7 @@ export interface PortfolioItem {
     camera: string;
     setting: string;
   };
+  imagePosition?: string;
 }
 
 export interface FilmItem {
@@ -73,6 +74,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/LandingPage1.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_35%]",
     description: "The crackle of the sacred havan, the scent of crushed camphor and marigold, and two souls quietly committing their lives to one another while families watch in tearful joy.",
     emotionalExcerpt: "In that quiet breath between the fourth and fifth round, he looked down at her hand, and everything stood still.",
     exif: {
@@ -92,6 +94,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/Landingpage2.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_35%]",
     description: "Before the music and the procession, there is this sacred hush. Two hearts finding solace in ancient stone corridors, whispered promises carried softly on the breeze.",
     emotionalExcerpt: "Not a single direction was given—they stood together in natural silence, and that is where the truth lives.",
     exif: {
@@ -111,6 +114,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/LandingPage3.png",
     aspect: "landscape",
+    imagePosition: "object-[center_25%]",
     description: "A mother adjusting the heavy zardozi dupatta, eyes shining with quiet tears of love, handing down three generations of family devotion.",
     emotionalExcerpt: "Neither spoke a word, because words would have broken the sacred stillness into tears.",
     exif: {
@@ -130,6 +134,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2024",
     imageUrl: "/Gallary/imgi_11_663089682_18088892522215915_6152286074647645901_n.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_45%]",
     description: "A man who spent thirty years being the unshakeable anchor of his home, gently placing his palm upon his daughter's head in unspoken blessing.",
     emotionalExcerpt: "These are the timeless frames your children will touch with gentle reverence decades from now.",
     exif: {
@@ -149,6 +154,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/imgi_15_655763221_18131362612557368_1871368625891049134_n.jpg",
     aspect: "portrait",
+    imagePosition: "object-[center_68%]",
     description: "Golden turmeric paste, flying marigold petals, and sisters laughing till their eyes watered in the morning sun.",
     emotionalExcerpt: "Unfiltered family celebration where every face radiated honest happiness.",
     exif: {
@@ -168,6 +174,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/imgi_27_628323685_18346461886235287_4431154153769162509_n.jpg",
     aspect: "landscape",
+    imagePosition: "object-[42%_32%]",
     description: "A flurry of rose petals showering from the night air as their eyes meet above the jasmine garlands.",
     emotionalExcerpt: "A roaring cheer erupted from the family, but between the two of them, it was completely quiet.",
     exif: {
@@ -187,6 +194,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2024",
     imageUrl: "/Gallary/imgi_31_704558536_17969950212160466_5180294263165990764_n.jpg",
     aspect: "portrait",
+    imagePosition: "object-[center_55%]",
     description: "Draped in pure Banarasi silk, the bride pauses by the stone jharokha as dusk descends over the heritage arches.",
     emotionalExcerpt: "The calm breathing of a woman stepping into her destiny.",
     exif: {
@@ -206,6 +214,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/imgi_13_657521665_18125284714601336_3167577979393449239_n.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_35%]",
     description: "Sister of the groom carefully tightening the sacred saffron knot, binding scarves and families together for lifetimes.",
     emotionalExcerpt: "Ancient Vedic rites documented with quiet reverence and natural firelight.",
     exif: {
@@ -225,6 +234,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2024",
     imageUrl: "/Gallary/imgi_19_625845774_18098232941506507_5968467827919506986_n.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_40%]",
     description: "A younger brother holding back tears behind a brave smile, clutching his sister's hand one last time before the doli departed.",
     emotionalExcerpt: "Childhood memories rushing by in thirty seconds of pure emotion.",
     exif: {
@@ -244,6 +254,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/imgi_33_622021504_18038150105746530_2459113938488280772_n.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_38%]",
     description: "Unstaged joy as grandparents stood up to dance, filling the hall with applause and warm embraces.",
     emotionalExcerpt: "The kind of photographs that keep a family's heart alive.",
     exif: {
@@ -263,6 +274,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2024",
     imageUrl: "/Gallary/imgi_37_624868998_18120768787562443_7707868480967000786_n.jpg",
     aspect: "landscape",
+    imagePosition: "object-[center_32%]",
     description: "A serene stroll through ancient brick stupas, sharing quiet smiles away from the bustling reception.",
     emotionalExcerpt: "Two people deeply in love, completely oblivious to our silent camera.",
     exif: {
@@ -282,6 +294,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     year: "2025",
     imageUrl: "/Gallary/imgi_43_655431071_18158067241437459_47542197678496787_n.jpg",
     aspect: "portrait",
+    imagePosition: "object-[66%_76%]",
     description: "Standing in the warm natural amber light of the ancestral room, adorned in heirloom polki diamonds.",
     emotionalExcerpt: "Dignity, heritage, and quiet regal grace.",
     exif: {

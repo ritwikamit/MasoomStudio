@@ -298,7 +298,7 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                   <img
                     src={item.imageUrl}
                     alt={item.title}
-                    className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                    className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${item.imagePosition || 'object-[center_25%]'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
                     <span className="text-xs text-white font-medium">{item.categoryLabel}</span>
@@ -1265,7 +1265,7 @@ export const DedicatedPages: React.FC<DedicatedPagesProps> = ({
                       <img
                         src={item.imageUrl}
                         alt={item.title}
-                        className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 group-hover:scale-105"
+                        className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 ${item.imagePosition || 'object-[center_25%]'}`}
                       />
                       <div className="absolute top-3 left-3 bg-[#0f0f0e]/75 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
                         {item.categoryLabel}

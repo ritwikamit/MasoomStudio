@@ -76,11 +76,11 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onSelectPhot
                 isLarge ? 'sm:col-span-2 sm:row-span-2' : ''
               }`}
             >
-              <div className="relative aspect-[4/3] w-full h-full min-h-[320px] overflow-hidden">
+              <div className="relative aspect-[4/3] w-full h-full min-h-[340px] sm:min-h-[380px] overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="w-full h-full object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-105"
+                  className={`w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${item.imagePosition || 'object-[center_25%]'}`}
                   loading="lazy"
                 />
 
