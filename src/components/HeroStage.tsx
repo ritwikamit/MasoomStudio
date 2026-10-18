@@ -387,7 +387,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
   const COL_X1_ITEMS = SIGNATURE_HERO_ITEMS.slice(18, 24);
 
   // Reusable card renderer with strict border containment and alignment
-  const renderCard = (itm: PortfolioItem, keySuffix: string) => {
+  const renderCard = (itm: PortfolioItem, keySuffix: string, isEager: boolean = false) => {
     return (
       <div
         key={`${itm.id}-${keySuffix}`}
@@ -398,7 +398,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
           src={itm.imageUrl}
           alt={itm.title}
           className="block w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 pointer-events-none"
-          loading="eager"
+          loading={isEager ? "eager" : "lazy"}
           decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/15 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 p-2.5 sm:p-3.5 flex flex-col justify-end pointer-events-none text-left">
@@ -422,12 +422,12 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
   const renderColumnSets = (items: PortfolioItem[], colPrefix: string) => {
     return (
       <>
-        {/* Set A */}
-        {items.map((item, idx) => renderCard(item, `${colPrefix}-a-${idx}`))}
-        {/* Set B */}
-        {items.map((item, idx) => renderCard(item, `${colPrefix}-b-${idx}`))}
-        {/* Set C (guarantees continuous coverage across any screen without breaking) */}
-        {items.map((item, idx) => renderCard(item, `${colPrefix}-c-${idx}`))}
+        {/* Set A - First 2 per column eager for fast LCP, rest lazy */}
+        {items.map((item, idx) => renderCard(item, `${colPrefix}-a-${idx}`, idx < 2))}
+        {/* Set B - Lazy */}
+        {items.map((item, idx) => renderCard(item, `${colPrefix}-b-${idx}`, false))}
+        {/* Set C - Lazy (guarantees continuous coverage across any screen without breaking) */}
+        {items.map((item, idx) => renderCard(item, `${colPrefix}-c-${idx}`, false))}
       </>
     );
   };
