@@ -1,11 +1,255 @@
 import React from 'react';
 import { ArrowUpRight, Camera, Heart, Compass } from 'lucide-react';
-import { PORTFOLIO_ITEMS, PortfolioItem } from '../data/portfolioData';
+import { PortfolioItem } from '../data/portfolioData';
 
 interface HeroStageProps {
   onOpenEnquiry: () => void;
   onSelectPhoto: (item: PortfolioItem) => void;
 }
+
+// Curated authentic images from the SignatureImage folder (Zero default stock photos in hero animation)
+const SIGNATURE_HERO_ITEMS: PortfolioItem[] = [
+  {
+    id: "sig-1",
+    title: "Eternal Sacred Vows",
+    scriptHighlight: "sacred fire",
+    category: "weddings",
+    categoryLabel: "Royal Pheras",
+    couple: "Ananya & Devendra",
+    location: "Patna Courtyard",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_20_793902640_18625914019009933_3844893497203068358_n.jpg",
+    aspect: "portrait",
+    description: "When sacred havan fire bears witness to quiet forever, captured in authentic natural light by Masoom Studio.",
+    emotionalExcerpt: "In that quiet breath between rounds, he looked down at her hand, and everything stood still.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/400s · f/1.8 · ISO 320" }
+  },
+  {
+    id: "sig-2",
+    title: "The Golden Twilight",
+    scriptHighlight: "heritage light",
+    category: "candid",
+    categoryLabel: "Heritage Pheras",
+    couple: "Pooja & Rohan",
+    location: "Ganga Ghat, Patna",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_10_620266125_17907545478161915_4102420289312451089_n.jpg",
+    aspect: "portrait",
+    description: "Quiet laughter and unhurried steps as twilight reflects upon the sacred river.",
+    emotionalExcerpt: "Not a single pose directed—only pure, unrehearsed devotion.",
+    exif: { lens: "50mm f/1.2 GM", camera: "Sony A7IV", setting: "1/640s · f/1.4 · ISO 160" }
+  },
+  {
+    id: "sig-3",
+    title: "Gentle Embrace",
+    scriptHighlight: "sacred vow",
+    category: "pre-wedding",
+    categoryLabel: "Quiet Moments",
+    couple: "Simran & Aakash",
+    location: "Bodh Gaya Pavilion",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_21_791045423_18625532263009933_1127683184340303703_n.jpg",
+    aspect: "portrait",
+    description: "A timeless frame of two souls finding quiet solace amidst wedding joy.",
+    emotionalExcerpt: "He leaned in to whisper what only she was meant to hear.",
+    exif: { lens: "35mm f/1.4 GM", camera: "Sony A7IV", setting: "1/500s · f/1.8 · ISO 200" }
+  },
+  {
+    id: "sig-4",
+    title: "Whispers of Forever",
+    scriptHighlight: "candid love",
+    category: "weddings",
+    categoryLabel: "Candid Love",
+    couple: "Kavya & Siddharth",
+    location: "Heritage Haveli",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_14_793840504_17989682433160466_6763089032284955801_n.jpg",
+    aspect: "portrait",
+    description: "Raw emotion documented without disruption. The tender glance before the celebrations began.",
+    emotionalExcerpt: "You could hear the soft clink of glass bangles and a heartbeat.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/320s · f/1.6 · ISO 400" }
+  },
+  {
+    id: "sig-5",
+    title: "Unprompted Joy",
+    scriptHighlight: "pure laughter",
+    category: "candid",
+    categoryLabel: "Ceremony Joy",
+    couple: "Meera & Vikram",
+    location: "Patna Heritage Club",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_23_712643826_17972376771160466_3971202427154637297_n.jpg",
+    aspect: "portrait",
+    description: "Burst of candid laughter as garlands are exchanged with playful family rivalry.",
+    emotionalExcerpt: "The purest documentation of wedding happiness.",
+    exif: { lens: "35mm f/1.4 GM", camera: "Sony A7IV", setting: "1/800s · f/2.0 · ISO 250" }
+  },
+  {
+    id: "sig-6",
+    title: "Sacred Haldi Bloom",
+    scriptHighlight: "marigold bliss",
+    category: "weddings",
+    categoryLabel: "Haldi Memories",
+    couple: "Isha & Shaurya",
+    location: "Patna Ancestral Villa",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_24_710468089_17972373231160466_6423309497429095746_n.jpg",
+    aspect: "portrait",
+    description: "Golden turmeric paste, flying petals, and sisters laughing till their eyes watered.",
+    emotionalExcerpt: "The warm sunlight kissed every grain of yellow marigold.",
+    exif: { lens: "24-70mm f/2.8 GM", camera: "Sony A7IV", setting: "1/1000s · f/2.8 · ISO 100" }
+  },
+  {
+    id: "sig-7",
+    title: "The Unfiltered Tear",
+    scriptHighlight: "vidaai blessing",
+    category: "weddings",
+    categoryLabel: "Vidaai Blessing",
+    couple: "Rhea & Tanmay",
+    location: "Royal Lawn, Patna",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_15_791706668_17989657194160466_1288569572505249799_n.jpg",
+    aspect: "portrait",
+    description: "A father's silent blessing—tears held back until the very moment of departure.",
+    emotionalExcerpt: "Some photographs take decades to fully understand; this was one.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/250s · f/1.4 · ISO 800" }
+  },
+  {
+    id: "sig-8",
+    title: "The Crimson Dupatta",
+    scriptHighlight: "bridal glow",
+    category: "portraits",
+    categoryLabel: "Bridal Portrait",
+    couple: "Aditi & Nikhil",
+    location: "Heritage Mandap",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_32_702695987_17969751702160466_2951487923943233506_n.jpg",
+    aspect: "portrait",
+    description: "Detailed craftsmanship of zari, heritage jewelry, and eyes calm with anticipation.",
+    emotionalExcerpt: "She breathed in deeply, ready to step into a new life.",
+    exif: { lens: "90mm f/2.8 Macro", camera: "Sony A7IV", setting: "1/200s · f/2.8 · ISO 400" }
+  },
+  {
+    id: "sig-9",
+    title: "Stolen Smiles in Sindoordaan",
+    scriptHighlight: "sacred red",
+    category: "weddings",
+    categoryLabel: "Sacred Sindoordaan",
+    couple: "Shruti & Harsh",
+    location: "Patna Riverside",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_35_648245666_17957908989160466_1465758617195676549_n.jpg",
+    aspect: "portrait",
+    description: "The quiet sanctity of vermilion traced along the parting of hair.",
+    emotionalExcerpt: "Hands trembled slightly, then met in an eternal knot.",
+    exif: { lens: "50mm f/1.2 GM", camera: "Sony A7IV", setting: "1/500s · f/1.6 · ISO 320" }
+  },
+  {
+    id: "sig-10",
+    title: "Under Marigold Stars",
+    scriptHighlight: "evening light",
+    category: "weddings",
+    categoryLabel: "Evening Pheras",
+    couple: "Divya & Yash",
+    location: "Courtyard Gardens",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_40_613087823_17949293922160466_8241948158425466193_n.jpg",
+    aspect: "portrait",
+    description: "Night falls over the courtyard as firelight warms the faces of loved ones chanting mantras.",
+    emotionalExcerpt: "Light dancing on gold embroidery, forever remembered.",
+    exif: { lens: "35mm f/1.4 GM", camera: "Sony A7IV", setting: "1/200s · f/1.4 · ISO 1250" }
+  },
+  {
+    id: "sig-11",
+    title: "The Royal Procession",
+    scriptHighlight: "heritage baraat",
+    category: "weddings",
+    categoryLabel: "Baraat Arrival",
+    couple: "Neha & Varun",
+    location: "Heritage Enclave",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_25_641238328_18563802418046015_7626816009777784522_n.jpg",
+    aspect: "portrait",
+    description: "Celebration echoes across the night sky as dhol beats announce the groom's family.",
+    emotionalExcerpt: "Unfiltered excitement and dancing cousins under vintage chandeliers.",
+    exif: { lens: "24-70mm f/2.8 GM", camera: "Sony A7IV", setting: "1/320s · f/2.8 · ISO 800" }
+  },
+  {
+    id: "sig-12",
+    title: "A Quiet Promise",
+    scriptHighlight: "quiet heritage",
+    category: "candid",
+    categoryLabel: "Priceless Heritage",
+    couple: "Pallavi & Kunal",
+    location: "Bailey Road Estate",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_20_622289146_17972843666834908_8509481171627861222_n.jpg",
+    aspect: "portrait",
+    description: "Tender gesture captured during family portraits—unnoticed by everyone except our lens.",
+    emotionalExcerpt: "The tenderest glances are always the ones never rehearsed.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/400s · f/1.4 · ISO 200" }
+  },
+  {
+    id: "sig-13",
+    title: "The First Look",
+    scriptHighlight: "pre-wedding",
+    category: "pre-wedding",
+    categoryLabel: "Pre-Wedding",
+    couple: "Sanya & Arjun",
+    location: "Terrace Pavilion",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_9_621552755_17956505118026578_7412093389766368195_n.jpg",
+    aspect: "portrait",
+    description: "Breathless first meeting before guests arrived. Calm, pure, and quiet.",
+    emotionalExcerpt: "He was speechless for ten seconds, then broke into the widest smile.",
+    exif: { lens: "50mm f/1.2 GM", camera: "Sony A7IV", setting: "1/800s · f/1.4 · ISO 100" }
+  },
+  {
+    id: "sig-14",
+    title: "Sacred Seven Rounds",
+    scriptHighlight: "royal pheras",
+    category: "weddings",
+    categoryLabel: "Royal Pheras",
+    couple: "Tara & Kabir",
+    location: "Patna Heritage Club",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_13_626429047_18039453911743433_5545539555574162708_n.jpg",
+    aspect: "portrait",
+    description: "Seven promises made by sacred agni, binding two heritage families together.",
+    emotionalExcerpt: "The knot was tied firmly, blessed by grandmother's tender prayers.",
+    exif: { lens: "35mm f/1.4 GM", camera: "Sony A7IV", setting: "1/400s · f/1.8 · ISO 400" }
+  },
+  {
+    id: "sig-15",
+    title: "Blessings of the Elders",
+    scriptHighlight: "family heirloom",
+    category: "candid",
+    categoryLabel: "Family Heirloom",
+    couple: "Anjali & Rohit",
+    location: "Patna Residence",
+    year: "2025",
+    imageUrl: "/SignatureImage/imgi_49_793901141_17989635192160466_1011388870616303356_n.jpg",
+    aspect: "portrait",
+    description: "Generations gathered under one roof, bestowing sacred blessings upon the newly married couple.",
+    emotionalExcerpt: "Wrinkled hands holding young palms in unconditional love.",
+    exif: { lens: "50mm f/1.2 GM", camera: "Sony A7IV", setting: "1/320s · f/2.0 · ISO 500" }
+  },
+  {
+    id: "sig-16",
+    title: "Golden Hour Vows",
+    scriptHighlight: "destination vows",
+    category: "weddings",
+    categoryLabel: "Destination Vows",
+    couple: "Ishita & Manav",
+    location: "Rajgir Hills",
+    year: "2024",
+    imageUrl: "/SignatureImage/imgi_18_792764378_17989579062160466_1738659390025263240_n.jpg",
+    aspect: "portrait",
+    description: "Sunset spilling amber light across the hills as vows are spoken softly.",
+    emotionalExcerpt: "Nature provided the cathedral; Masoom Studio provided the eye.",
+    exif: { lens: "85mm f/1.4 GM", camera: "Sony A7IV", setting: "1/640s · f/1.6 · ISO 160" }
+  }
+];
 
 export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPhoto }) => {
   const scrollToPortfolio = (e: React.MouseEvent) => {
@@ -16,44 +260,44 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
     }
   };
 
-  // Curated 6 items per column (rendered across 3 identical sets A, B, C for a 100% seamless 33.333% loop)
+  // Curated 6 items per column populated solely with authentic SignatureImage photos
   const COL_X1_ITEMS = [
     { type: 'quote' as const, kicker: 'Sacred Pheras', quote: 'When fire bears witness to quiet forever.', script: 'Masoom Studio' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[1] },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[5] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[9] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[10] },
     { type: 'quote' as const, kicker: 'Estd. 2018', quote: 'Preserving quiet heritage rituals.', script: 'Patna, Bihar' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[3] },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[4] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[11] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[12] },
   ];
 
   const COL_C1_ITEMS = [
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[0] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[0] },
     { type: 'quote' as const, kicker: 'The Sacred Vow', quote: 'More than a photograph. A memory you return to.', sub: 'Patna, Bihar' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[2] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[1] },
     { type: 'quote' as const, kicker: 'Unprompted Love', quote: 'The glances you will cherish forever.', script: 'natural light' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[1] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[2] },
     { type: 'quote' as const, kicker: 'Quiet Tears', quote: 'Sacred ceremonies honored with devotion.', script: 'truthful tones' },
   ];
 
   const COL_C2_ITEMS = [
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[3] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[3] },
     { type: 'quote' as const, kicker: 'Archival Heart', quote: 'Crafted for Generations to Hold.', script: 'heirlooms' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[4] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[4] },
     { type: 'quote' as const, kicker: 'Documentary Truth', quote: 'Unscripted tears, joyful blessings.', script: 'authentic vows' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[5] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[5] },
     { type: 'quote' as const, kicker: 'Timeless Archiving', quote: '4K cinema masters and fine-art cotton.', script: 'centuries' },
   ];
 
   const COL_C3_ITEMS = [
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[6] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[6] },
     { type: 'quote' as const, kicker: 'Pure Empathy', quote: 'We watch for the tears you never saw.', sub: 'Estd. 2018' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[7] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[7] },
     { type: 'quote' as const, kicker: 'Heirloom Books', quote: 'Museum-grade cotton and linen bindings.', script: '50-year archive' },
-    { type: 'img' as const, item: PORTFOLIO_ITEMS[0] },
+    { type: 'img' as const, item: SIGNATURE_HERO_ITEMS[8] },
     { type: 'quote' as const, kicker: 'Vow Stories', quote: 'Natural light and honest Indian skin tones.', script: 'hand-calibrated' },
   ];
 
-  // Reusable card renderer
+  // Reusable card renderer with strict border containment and alignment
   const renderCard = (
     type: 'img' | 'quote',
     data: { item?: PortfolioItem; kicker?: string; quote?: string; script?: string; sub?: string },
@@ -65,16 +309,18 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
         <div
           key={`${itm.id}-${keySuffix}`}
           onClick={() => onSelectPhoto(itm)}
-          className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] overflow-hidden relative group cursor-pointer shrink-0 border border-[#0f0f0e]/10 shadow-md bg-[#eae5dc]"
+          className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] overflow-hidden relative group cursor-pointer shrink-0 border border-[#0f0f0e]/12 shadow-sm bg-[#eae5dc] isolate [transform:translateZ(0)] select-none hover:border-[#b3884c]/60 transition-colors"
         >
           <img
             src={itm.imageUrl}
             alt={itm.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="block w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 pointer-events-none"
             loading="eager"
+            decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity p-2 sm:p-3 flex flex-col justify-end">
-            <span className="text-[10px] sm:text-[11px] font-semibold text-white truncate">{itm.title}</span>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 p-2.5 sm:p-3 flex flex-col justify-end pointer-events-none">
+            <span className="text-[10px] sm:text-[11px] font-semibold text-white tracking-wide truncate">{itm.title}</span>
+            <span className="font-['Pinyon_Script',cursive] text-xs sm:text-sm text-[#e6cfab] truncate">{itm.couple}</span>
           </div>
         </div>
       );
@@ -83,7 +329,7 @@ export const HeroStage: React.FC<HeroStageProps> = ({ onOpenEnquiry, onSelectPho
     return (
       <div
         key={`quote-${data.kicker}-${keySuffix}`}
-        className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] backdrop-blur-md bg-white/95 border border-white/80 p-2.5 sm:p-4 flex flex-col justify-between shrink-0 shadow-sm overflow-hidden select-none"
+        className="w-[var(--col)] h-[calc(var(--pitch)-var(--gap))] mb-[var(--gap)] rounded-[var(--r)] backdrop-blur-md bg-white/95 border border-[#0f0f0e]/10 p-2.5 sm:p-4 flex flex-col justify-between shrink-0 shadow-sm overflow-hidden select-none"
       >
         <span className="text-[7.5px] sm:text-[9.5px] tracking-widest uppercase font-semibold text-[#b3884c] truncate">
           {data.kicker}
